@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GC-home</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- nav menu-->
+    <header class="p-3 bg-black">
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+          >
+            <svg
+              class="bi me-2"
+              width="40"
+              height="32"
+              role="img"
+              aria-label="Bootstrap"
+            >
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a href="index.html" class="nav-link px-2 text-white">Home</a>
+            </li>
+            <li>
+              <a href="movie.html" class="nav-link px-2 text-white">Movies</a>
+            </li>
+            <li>
+              <a href="contant_us.html" class="nav-link px-2 text-white"
+                >Contant Us</a
+              >
+            </li>
+          </ul>
+
+          <div class="text-end">
+            <a href="login.html">
+              <button type="button" class="btn btn-outline-light me-2">
+                Login
+              </button></a
+            >
+            <a href="signup.html"
+              ><button type="button" class="btn btn-warning">Sign-up</button></a
+            >
+            <a href="logout.html"
+              ><button type="button" class="btn btn-danger">Logout</button></a
+            >
+            <a href="logout.html"
+              ><button type="button" class="btn btn-primary">
+                admin page
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header -->
+    <header>
+      <div
+        class="carousel slide"
+        data-bs-ride="carousel"
+        id="slider"
+        data-bs-touch="true"
+      >
+        <div class="carousel-indicators justify-content-end">
+          <button
+            data-bs-target="#slider"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button data-bs-target="#slider" data-bs-slide-to="1"></button>
+          <button data-bs-target="#slider" data-bs-slide-to="2"></button>
+          <button data-bs-target="#slider" data-bs-slide-to="3"></button>
+          <button data-bs-target="#slider" data-bs-slide-to="4"></button>
+          <button data-bs-target="#slider" data-bs-slide-to="5"></button>
+          <button data-bs-target="#slider" data-bs-slide-to="6"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../assets/img/banner-5.jpg"
+              alt=""
+              class="d-block w-100"
+            />
+          </div>
+          <!-- <div class="carousel-item">
+            <img src="../assets/img/banner-2.jpg" alt="" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/banner-3.jpg" alt="" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/banner-4.jpg" alt="" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/banner-5.jpg" alt="" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/banner-6.jpg" alt="" class="d-block w-100" />
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/img/banner-7.jpg" alt="" class="d-block w-100" />
+          </div> -->
+        </div>
+      </div>
+    </header>
+    <!-- Booking-banner -->
+    <div class="booking-banner">
+      <img src="../assets/img/booking-banner.jpg" alt="" class="img-fluid" />
+    </div>
+    <main>
+      <!-- showing tap -->
+      <section class="showing bg-black py-2">
+        <ul class="nav nav-tabs justify-content-lg-start ps-5">
+          <li>
+            <button class="nav-link active">Popular Movies</button>
+          </li>
+        </ul>
+
+        <!-- =========showing img======== -->
+        <ul class="nav d-flex justify-content-center text-white text-center">
+          <li class="position-relative">
+            <div class="hover-background">
+              <div
+                class="button d-flex flex-column position-absolute top-50 start-50 translate-middle"
+              >
+                <button type="button" class="btn btn-warning mb-3">Buy</button>
+                <button type="button" class="btn btn-dark">Info</button>
+              </div>
+            </div>
+            <img src="../assets/img/showing-2.jpg" alt="" />
+            <p>Black Adam</p>
+          </li>
+        </ul>
+      </section>
+
+      <!--  footer -->
+      <section class="bg-dark">
+        <div class="container">
+          <footer class="py-3">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item">
+                <a href="about_us.html" class="nav-link px-2 text-muted"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="term_of_use.html" class="nav-link px-2 text-muted"
+                  >Term of Use</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="privacy_policy.html" class="nav-link px-2 text-muted"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+            <p class="text-center text-muted">
+              Copyright Reserved © Gold Cinema . All Rights Reserved
+            </p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <!-- --------------------------------------------------------------- -->
+    <footer class="text-white bg-dark text-center py-3">
+      <small>For Educational purposes only.</small>
+    </footer>
+    <!-- --------------------------------------------------------------- -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
