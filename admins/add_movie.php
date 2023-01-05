@@ -122,13 +122,15 @@
                   id="synopsis"
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                id="submit"
-                class="btn btn-success mt-3"
-              >
-                <strong>Submit</strong>
-              </button>
+
+              <div class="mt-2">
+              <a href="">
+                <button type="button" class="btn-success btn btn-outline-light">Add Movie</button>
+                </a>
+                <a href="/movie_management">
+                <button type="button" class="btn-danger btn btn-outline-light ">Back</button>
+                </a>
+              </div>
             </form>
           </div>
         </div>

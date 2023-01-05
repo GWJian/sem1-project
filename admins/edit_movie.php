@@ -113,18 +113,20 @@
             </div>
 
             <div>
-              <textarea class="form-control mt-3" rows="10">text</textarea>
               <label for="synopsis">Synopsis:</label>
+              <textarea class="form-control mt-2" rows="10">text</textarea>     
             </div>
             <input type="hidden" id="id" value="1" />
 
-            <button
-              type="submit"
-              id="submit"
-              class="btn btn-success mt-3"
-            >
-              <strong>Submit</strong>
-            </button>
+            <div class="mt-2">
+              <a href="">
+                <button type="button" class="btn-success btn btn-outline-light">Add Movie</button>
+                </a>
+                <a href="/movie_management">
+                <button type="button" class="btn-danger btn btn-outline-light ">Back</button>
+                </a>
+            </div>
+
           </form>
         </div>
       </div>

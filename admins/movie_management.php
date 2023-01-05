@@ -7,7 +7,12 @@
     <section class="bg-dark vh-100">
       <div class="container">
         <h2 style="color: #fbca04">Movie Management</h2>
-        <div>
+        <div class="float-end">
+        <a href="/admin_page">
+            <button type="button" class="btn-danger btn btn-outline-light mb-2">
+              Back
+            </button></a
+          >
           <a href="/add_movie">
             <button type="button" class="btn-info btn btn-outline-light mb-2">
               Add Movie
@@ -25,7 +30,7 @@
                 <th>Language</th>
                 <th>Duration</th>
                 <th>Release Date</th>
-                <th>Cast</th>
+                <th> </th> <!-- dont delete -->
                 <th>Classification</th>
                 <th>Synopsis</th>
                 <th>Option</th>
@@ -43,14 +48,13 @@
                 <td>18</td>
                 <td
                   style="
-                    text-overflow: ellipsis;
                     overflow: hidden;
                     white-space: nowrap;
                     width: 200px;
                     display: block;
                   "
                 >
-                  movie 01movie 01movie 01movie 01movie 01movie 01movie 01
+                  MOVIE Synopsis
                 </td>
                 <td>
                   <a href="/edit_movie"

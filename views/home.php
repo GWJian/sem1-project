@@ -70,11 +70,9 @@
         <ul class="nav d-flex justify-content-center text-white text-center">
           <li class="position-relative">
             <div class="hover-background">
-              <div
-                class="button d-flex flex-column position-absolute top-50 start-50 translate-middle"
-              >
-                <button type="button" class="btn btn-warning mb-3">Buy</button>
-                <button type="button" class="btn btn-dark">Info</button>
+              <div class="button d-flex flex-column position-absolute top-50 start-50 translate-middle">
+              <a href="/ticker_order"><button type="button" class="btn btn-danger mb-3">Buy</button></a>
+              <a href="/movie_deteil"><button type="button" class="btn btn-warning">Info</button></a>
               </div>
             </div>
             <img src="../assets/img/showing-2.jpg" alt="" />

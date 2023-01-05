@@ -17,11 +17,7 @@
                 class="hover-background d-flex align-items-center justify-content-center"
               >
                 <div>
-                  <a href="/movie_deteil"
-                    ><button type="button" class="btn btn-warning">
-                      Info
-                    </button></a
-                  >
+                  <a href="/movie_deteil"><button type="button" class="btn btn-warning">Info</button></a>
                 </div>
               </div>
               <img

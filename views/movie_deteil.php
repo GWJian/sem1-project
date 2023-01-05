@@ -32,13 +32,11 @@
               <br />
               <h4>Duration: 100 minutes</h4>
               <br />
-              <h4>Cast:</h4>
-              <br />
-            </div>
-
-            <p>
+              <p>
               Synopsis: movie 01movie 01movie 01movie 01movie 01movie 01movie 01
-            </p>
+              </p>
+            </div>
+            <a href="/ticker_order"><button type="button" class="btn btn-danger mb-3">Buy</button></a>
           </div>
         </div>
       </div>

@@ -29,6 +29,9 @@
           <a href="/movie" class="nav-link px-2 text-white">Movies</a>
         </li>
         <li>
+          <a href="/ticker_order" class="nav-link px-2 text-white">Buy Now</a>
+        </li>
+        <li>
           <a href="/contant_us" class="nav-link px-2 text-white"
             >Contant Us</a
           >

@@ -57,6 +57,9 @@ switch( $path ) {
     case 'movie_management':
         require "admins/movie_management.php";
         break;
+    case 'ticker_order':
+        require "admins/ticker_order.php";
+        break;
 
     // =========== Home ===============
     default:
