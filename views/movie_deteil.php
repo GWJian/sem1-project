@@ -3,17 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GC-movie</title>
+    <title>GC-Movie Details</title>
     <link rel="stylesheet" href="../assets/css/movie.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3//all.min.css"
     />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
     />
   </head>
   <body>
@@ -23,21 +21,6 @@
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-          <a
-            href="/"
-            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-          >
-            <svg
-              class="bi me-2"
-              width="40"
-              height="32"
-              role="img"
-              aria-label="Bootstrap"
-            >
-              <use xlink:href="#bootstrap"></use>
-            </svg>
-          </a>
-
           <ul
             class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
           >
@@ -73,49 +56,40 @@
     <!-- Movies -->
     <section class="bg-dark">
       <div class="container">
-        <h1 style="text-align: center; color: #fbca04">Now Showing</h1>
-      </div>
-
-      <div class="container">
         <div class="row">
-          <div class="col-lg-3">
-            <div class="d-flex position-relative">
-              <div
-                class="hover-background d-flex align-items-center justify-content-center"
-              >
-                <div>
-                  <a href="movie_deteil.html"
-                    ><button type="button" class="btn btn-warning">
-                      Info
-                    </button></a
-                  >
-                </div>
-              </div>
+          <div class="col-md-4">
+            <div class="PosterArt">
+              <br />
               <img
-                class="h-75 w-100"
                 src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
+                class="img-responsive"
+                style="width: 360px; height: 480px"
               />
             </div>
-            <span><h3 class="text-center text-white">movie name</h3></span>
           </div>
-
-          <!-- sec img here -->
-          <!-- <div class="col-lg-3">
-            <div class="d-flex position-relative">
-              <div class="hover-background d-flex align-items-center justify-content-center">
-                <div>
-                  <a href=""
-                    ><span>PHP to other page,synopsis,hover effect</span></a
-                  >
-                </div>
-              </div>
-              <img
-                class="h-75 w-100"
-                src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
-              />
+          <div class="col-md-8 content">
+            <br />
+            <h2 class="text-warning">Details - movie 01</h2>
+            <br />
+            <div class="text-white">
+              <h4>Release Date: 1/1/2022</h4>
+              <br />
+              <h4>Language: English</h4>
+              <br />
+              <h4>Classification: 18</h4>
+              <br />
+              <h4>Genre: movie 01</h4>
+              <br />
+              <h4>Duration: 100 minutes</h4>
+              <br />
+              <h4>Cast:</h4>
+              <br />
             </div>
-            <span><h3 class="text-center text-white">movie name</h3></span>
-          </div> -->
+
+            <p>
+              Synopsis: movie 01movie 01movie 01movie 01movie 01movie 01movie 01
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GC-admin</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>GC-movie</title>
+    <link rel="stylesheet" href="../assets/css/movie.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -23,21 +23,6 @@
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-          <a
-            href="/"
-            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
-          >
-            <svg
-              class="bi me-2"
-              width="40"
-              height="32"
-              role="img"
-              aria-label="Bootstrap"
-            >
-              <use xlink:href="#bootstrap"></use>
-            </svg>
-          </a>
-
           <ul
             class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
           >
@@ -70,8 +55,55 @@
         </div>
       </div>
     </header>
-    <!-- admin movie management -->
-    <section class="bg-dark vh-100"></section>
+    <!-- Movies -->
+    <section class="bg-dark">
+      <div class="container">
+        <h1 style="text-align: center; color: #fbca04">Now Showing</h1>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="d-flex position-relative">
+              <div
+                class="hover-background d-flex align-items-center justify-content-center"
+              >
+                <div>
+                  <a href="movie_deteil.html"
+                    ><button type="button" class="btn btn-warning">
+                      Info
+                    </button></a
+                  >
+                </div>
+              </div>
+              <img
+                class="h-75 w-100"
+                src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
+              />
+            </div>
+            <span><h3 class="text-center text-white">movie name</h3></span>
+          </div>
+
+          <!-- sec img here -->
+          <!-- <div class="col-lg-3">
+            <div class="d-flex position-relative">
+              <div class="hover-background d-flex align-items-center justify-content-center">
+                <div>
+                  <a href=""
+                    ><span>PHP to other page,synopsis,hover effect</span></a
+                  >
+                </div>
+              </div>
+              <img
+                class="h-75 w-100"
+                src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
+              />
+            </div>
+            <span><h3 class="text-center text-white">movie name</h3></span>
+          </div> -->
+        </div>
+      </div>
+    </section>
 
     <!-- Site footer -->
     <section class="bg-dark">
