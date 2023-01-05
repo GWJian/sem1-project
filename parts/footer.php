@@ -4,17 +4,17 @@
           <footer class="py-3">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
               <li class="nav-item">
-                <a href="about_us.html" class="nav-link px-2 text-muted"
+                <a href="/about_us" class="nav-link px-2 text-muted"
                   >About Us</a
                 >
               </li>
               <li class="nav-item">
-                <a href="term_of_use.html" class="nav-link px-2 text-muted"
+                <a href="/term_of_use" class="nav-link px-2 text-muted"
                   >Term of Use</a
                 >
               </li>
               <li class="nav-item">
-                <a href="privacy_policy.html" class="nav-link px-2 text-muted"
+                <a href="/privacy_policy" class="nav-link px-2 text-muted"
                   >Privacy Policy</a
                 >
               </li>

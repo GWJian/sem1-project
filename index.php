@@ -31,8 +31,8 @@ switch( $path ) {
     case 'logout':
         require "views/logout.php";
         break;
-    case 'movie_deteil':
-        require "views/movie_deteil.php";
+    case 'movie':
+        require "views/movie.php";
         break;
     case 'privacy_policy':
         require "views/privacy_policy.php";

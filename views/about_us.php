@@ -27,28 +27,28 @@
             class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
           >
             <li>
-              <a href="index.html" class="nav-link px-2 text-white">Home</a>
+              <a href="/" class="nav-link px-2 text-white">Home</a>
             </li>
             <li>
-              <a href="movie.html" class="nav-link px-2 text-white">Movies</a>
+              <a href="/movie" class="nav-link px-2 text-white">Movies</a>
             </li>
             <li>
-              <a href="contant_us.html" class="nav-link px-2 text-white"
+              <a href="/contant_us" class="nav-link px-2 text-white"
                 >Contant Us</a
               >
             </li>
           </ul>
 
           <div class="text-end">
-            <a href="login.html">
+            <a href="/login">
               <button type="button" class="btn btn-outline-light me-2">
                 Login
               </button></a
             >
-            <a href="signup.html"
+            <a href="/signup"
               ><button type="button" class="btn btn-warning">Sign-up</button></a
             >
-            <a href="logout.html"
+            <a href="/logout"
               ><button type="button" class="btn btn-danger">Logout</button></a
             >
           </div>
@@ -98,17 +98,17 @@
         <footer class="py-3">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item">
-              <a href="about_us.html" class="nav-link px-2 text-muted"
+              <a href="/about_us" class="nav-link px-2 text-muted"
                 >About Us</a
               >
             </li>
             <li class="nav-item">
-              <a href="term_of_use.html" class="nav-link px-2 text-muted"
+              <a href="/term_of_use" class="nav-link px-2 text-muted"
                 >Term of Use</a
               >
             </li>
             <li class="nav-item">
-              <a href="privacy_policy.html" class="nav-link px-2 text-muted"
+              <a href="/privacy_policy" class="nav-link px-2 text-muted"
                 >Privacy Policy</a
               >
             </li>
