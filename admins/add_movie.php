@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require "includes/functions.php";
+
+?>
 <!-- require the header part -->
 <?php require "parts/header.php" ?>
 <!-- require the header part -->
@@ -14,8 +19,9 @@
           </div>
 
           <div class="panel-body">
+            
             <form
-              action="../libs/functions/insertmovie.php"
+              action="../includes/class-insert_movie.php"
               method="post"
               enctype="multipart/form-data"
               id="insertMovieForm"
@@ -94,12 +100,12 @@
                     <select
                       class="form-control"
                       id="classification"
-                    >
+                      >
                       <option></option>
                       <option>U</option>
                       <option>PG</option>
-                      <option>12</option>
-                      <option>18</option>
+                      <option>R12</option>
+                      <option>R18</option>
                     </select>
                   </div>
                 </div>
@@ -124,9 +130,10 @@
               </div>
 
               <div class="mt-2">
-              <a href="">
-                <button type="button" class="btn-success btn btn-outline-light">Add Movie</button>
-                </a>
+              <form action="" method="POST">
+                  <input type="hidden" name="submit" value="">
+                  <input type="submit" name="submit" value="submit" class="btn btn-danger">
+              </form>
                 <a href="/movie_management">
                 <button type="button" class="btn-danger btn btn-outline-light ">Back</button>
                 </a>

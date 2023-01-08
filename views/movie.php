@@ -1,3 +1,23 @@
+<?php 
+    
+    session_start();
+    //load file then only start functions
+    require "includes/functions.php";
+    require "includes/class-movie_management.php";
+
+    //call the MOVIES class
+    $movies = new MOVIES ();
+
+    //list out the movies
+    $movies_list = $movies ->listAllMovies();
+?>
+
+
+
+
+
+
+
 <!-- require the header part -->
 <?php require "parts/header.php" ?>
 <!-- require the header part -->
@@ -11,6 +31,7 @@
 
       <div class="container">
         <div class="row">
+        <?php foreach ( $movies_list as $movie ): ?>
           <div class="col-lg-3">
             <div class="d-flex position-relative">
               <div
@@ -22,11 +43,12 @@
               </div>
               <img
                 class="h-75 w-100"
-                src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
+                src="<?php echo $movie['image_url']; ?>"
               />
             </div>
-            <span><h3 class="text-center text-white">movie name</h3></span>
+            <span><h3 class="text-center text-white"><?php echo $movie['movie_name']; ?></h3></span>
           </div>
+        <?php endforeach; ?>
 
           <!-- sec img here -->
           <!-- <div class="col-lg-3">

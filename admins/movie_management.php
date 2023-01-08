@@ -1,16 +1,15 @@
-<?php 
-    
+<?php  
     session_start();
     //load file then only start functions
     require "includes/functions.php";
-    require "includes/admin-movies.php";
+    require "includes/class-movie_management.php";
+
 
     //call the MOVIES class
-    $movie = new MOVIES ();
-
-    //list out the movies
-    $movies_list = $movie ->listAllMovies();
+    $movies = new MOVIES ();
     
+    //list out the movies
+    $movies_list = $movies ->listAllMovies();
 
 ?>
 
@@ -57,27 +56,23 @@
                         <td><?php echo $movie['genre']; ?></td>
                         <td><?php echo $movie['language']; ?></td>
                         <td><?php echo $movie['duration']; ?></td>
-                        <td><?php echo $movie['release Date']; ?></td>
+                        <td><?php echo $movie['releasedate']; ?></td>
                         <td><?php echo $movie['classification']; ?></td>
                         <td style="overflow: hidden;white-space: nowrap;width: 200px;display: block;">
                             <?php echo $movie['synopsis']; ?>
                         </td>
                         <td>
                             <a href="/edit_movie">
-                                <button type="button" class="btn-success btn mb-2">
-                                    Edit
-                                </button></a>
+                                <button type="button" class="btn-success btn mb-2">Edit</button>
+                            </a>
                         </td>
                         <td>
-                            <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-                                <!-- speficy the action as remove -->
-                                <input type="hidden" name="action" value="remove" />
-                                <!-- remove the selected movie from cart -->
-                                <input type="hidden" name="movie_id" value="<?php echo $movie['id']; ?>" />
-                                <button type="button" class="btn-danger btn mb-2">
-                                    Remove
-                                </button>
-                            </form>
+                        <!-- =============----delete form----================== -->
+                        <form action="../includes/class-movie_delete.php" method="POST">
+                            <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
+                            <input type="submit" name="delete" value="Remove" class="btn btn-danger">
+                        </form>
+                        <!-- =============----delete form----================== -->
                         </td>
                     </tr>
                     <?php endforeach; ?>
