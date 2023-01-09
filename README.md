@@ -7,3 +7,5 @@ Movie Management delete havent complete
 delete funciton cant remove first item only
 
 and insert problem
+
+signup logout follow sir

@@ -1,5 +1,15 @@
 <?php
 
+    // start session
+    // session_start();
+
+    // require all the classes & functions files
+    // require "includes/functions.php";
+    // require "includes/class-movie_management.php";
+    // =================
+    require "includes/class-db.php";
+    require "includes/class-user.php";
+    require "includes/class-authentication.php";
 
 //get route from the global variable
 $path = $_SERVER[ "REQUEST_URI" ];
@@ -59,6 +69,9 @@ switch( $path ) {
         break;
     case 'cart':
         require "admins/cart.php";
+        break;
+    case 'dashboard':
+        require 'admins/dashboard.php';
         break;
 
     // =========== Home ===============
