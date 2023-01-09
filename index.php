@@ -57,8 +57,8 @@ switch( $path ) {
     case 'movie_management':
         require "admins/movie_management.php";
         break;
-    case 'ticker_order':
-        require "admins/ticker_order.php";
+    case 'cart':
+        require "admins/cart.php";
         break;
 
     // =========== Home ===============

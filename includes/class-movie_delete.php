@@ -4,7 +4,7 @@ require "functions.php";
 
 $database = connectToDB();
 
-
+    
 if (isset($_POST['delete_movie_id']))
 {
     var_dump($_POST['delete_movie_id']);

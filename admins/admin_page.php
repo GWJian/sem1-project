@@ -31,7 +31,7 @@
             </div>
           </a>
           <a
-            href="/ticker_order"
+            href="/cart"
             class="list-group-item list-group-item-action d-flex gap-3 py-3"
             aria-current="true"
           >

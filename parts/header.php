@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GC</title>
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css?v=<?= time()?> " />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
@@ -27,10 +27,10 @@ body {
                         <a href="/" class="nav-link px-2 text-white">Home</a>
                     </li>
                     <li>
-                        <a href="/movie" class="nav-link px-2 text-white">Movies</a>
+                        <a href="/movie" class="nav-link px-2 text-white">Store</a>
                     </li>
                     <li>
-                        <a href="/ticker_order" class="nav-link px-2 text-white">Buy Now</a>
+                        <a href="/cart" class="nav-link px-2 text-white">Cart</a>
                     </li>
                     <li>
                         <a href="/contant_us" class="nav-link px-2 text-white">Contant Us</a>

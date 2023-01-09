@@ -45,6 +45,7 @@
                         <th scope="col">Release Date</th>
                         <th scope="col">Classification</th>
                         <th scope="col">Synopsis</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Option</th>
                     </tr>
                 </thead>
@@ -61,18 +62,19 @@
                         <td style="overflow: hidden;white-space: nowrap;width: 200px;display: block;">
                             <?php echo $movie['synopsis']; ?>
                         </td>
+                        <td>$<?php echo $movie['price']; ?></td>
                         <td>
                             <a href="/edit_movie">
                                 <button type="button" class="btn-success btn mb-2">Edit</button>
                             </a>
                         </td>
                         <td>
-                        <!-- =============----delete form----================== -->
-                        <form action="../includes/class-movie_delete.php" method="POST">
-                            <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
-                            <input type="submit" name="delete" value="Remove" class="btn btn-danger">
-                        </form>
-                        <!-- =============----delete form----================== -->
+                            <!-- =============----delete form----================== -->
+                            <form action="../includes/class-movie_delete.php" method="POST">
+                                <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
+                                <input type="submit" name="delete" value="Remove" class="btn btn-danger">
+                            </form>
+                            <!-- =============----delete form----================== -->
                         </td>
                     </tr>
                     <?php endforeach; ?>
