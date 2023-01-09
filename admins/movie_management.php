@@ -28,7 +28,8 @@
                 </button></a>
         </div>
 
-        <form action="">
+        <!-- Delete btn <form action="../includes/class-movie_delete.php"  method="POST"> -->
+        <form action="../includes/class-movie_delete.php" method="POST">
             <table class="table bg-white">
                 <thead>
                     <tr>
@@ -65,10 +66,8 @@
                         </td>
                         <td>
                             <!-- =============----delete form----================== -->
-                            <form action="../includes/class-movie_delete.php" method="POST">
-                                <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
-                                <input type="submit" name="delete" value="Remove" class="btn btn-danger">
-                            </form>
+                            <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
+                            <input type="submit" name="delete" value="Remove" class="btn btn-danger">
                             <!-- =============----delete form----================== -->
                         </td>
                     </tr>
