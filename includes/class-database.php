@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 class DB
@@ -65,16 +64,4 @@ class DB
     {
 
     }
-=======
-<?php 
-
-
-function connectToDB()
-{
-    return new PDO(
-        'mysql:host=devkinsta_db;dbname=Final_project',
-        'root',
-        'kxwGCh40Sn6AvFJB'
-    );
->>>>>>> 7d6a73554286975453066ebbf99b62a6884d69d1
 }
