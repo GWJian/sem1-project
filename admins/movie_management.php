@@ -1,4 +1,9 @@
 <?php  
+    session_start();
+    //load file then only start functions
+    require "includes/functions.php";
+    require "includes/class-movie_management.php";
+
 
     //call the MOVIES class
     $movies = new MOVIES ();
@@ -28,7 +33,6 @@
                 </button></a>
         </div>
 
-        <!-- Delete btn <form action="../includes/class-movie_delete.php"  method="POST"> -->
         <form action="../includes/class-movie_delete.php" method="POST">
             <table class="table bg-white">
                 <thead>

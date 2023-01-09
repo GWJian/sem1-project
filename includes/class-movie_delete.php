@@ -1,14 +1,6 @@
 <?php
 
-function connectToDB()
-{
-    return new PDO(
-        'mysql:host=devkinsta_db;dbname=Final_project',
-        'root',
-        'kxwGCh40Sn6AvFJB'
-    );
-    
-}
+require "functions.php";
 
 $database = connectToDB();
 
@@ -16,7 +8,7 @@ $database = connectToDB();
 if (isset($_POST['delete_movie_id']))
 {
     // var_dump($_POST['delete_movie_id']);
-    // delete 
+    //delete 
      $statement = $database->prepare(
          'DELETE FROM movies WHERE id = :id'
      );

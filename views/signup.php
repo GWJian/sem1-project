@@ -1,8 +1,3 @@
-<?php
-
-
-
-?>
 <!-- require the header part -->
 <?php require "parts/header.php" ?>
 <!-- require the header part -->
