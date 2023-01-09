@@ -1,9 +1,4 @@
 <?php 
-    
-    session_start();
-    //load file then only start functions
-    require "includes/functions.php";
-    require "includes/class-movie_management.php";
 
     //call the MOVIES class
     $movies = new MOVIES ();

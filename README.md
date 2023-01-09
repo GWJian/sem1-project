@@ -6,4 +6,4 @@ Movie Management delete havent complete
 8 jan 2023
 delete funciton cant remove first item only
 
-and insert problem0
+and insert problem

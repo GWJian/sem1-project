@@ -1,5 +1,14 @@
 <?php
 
+// start session
+session_start();
+
+// require all the classes & functions files
+require "includes/class-insert_movie.php";
+require "includes/class-database.php";
+require "includes/class-movie_delete.php";
+require "includes/class-movie_management.php";
+
 
 //get route from the global variable
 $path = $_SERVER[ "REQUEST_URI" ];
