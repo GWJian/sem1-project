@@ -1,5 +1,7 @@
 <!-- require the header part -->
-<?php require "parts/header.php" ?>
+<?php
+require dirname(__DIR__) . '/parts/header.php';
+?>
 <!-- require the header part -->
 
 <H1 class="text-white">THIS IS cart PAGE</H1>
@@ -9,5 +11,7 @@
 </section>
 
 <!-- require the footer part -->
-<?php require "parts/footer.php" ?>
+<?php
+    require dirname(__DIR__) . '/parts/footer.php';
+?>
 <!-- require the footer part -->
