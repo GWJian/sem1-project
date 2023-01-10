@@ -20,18 +20,28 @@ class DB
     public static function connect()
     {
         return new self();
-
+        // equal to new DB()
+        // DB::connect() is eqal to new DB()
     }
 
+/**
+     * Trigger SELECT command via PDO
+     */
     public function select( $sql, $data = [])
     {
-
+        //prepare
         $statement = $this->db->prepare( $sql );
+        //execute
         $statement->execute($data);
+        //fetch
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-
+    /**
+     * Trigger INSERT INTO command via PDO
+     * $sql = insert command
+     * $data will be used in execute()
+     */
     public function insert( $sql, $data )
     {
         $statement = $this->db->prepare( $sql );
@@ -39,21 +49,22 @@ class DB
         return $this->db->lastInsertId();
     }
 
-
+    /**
+     * Trigger UPDATE command via PDO
+     */
     public function update()
     {
 
     }
 
-    public function delete()
+    /**
+     * Trigger DELETE command via PDO
+     */
+    public function delete( $sql )
     {
-<<<<<<< HEAD
         $statement = $this->db->prepare( $sql );
         $statement->execute ([
             'id' => $_POST['delete_movie']
         ]);
-=======
-
->>>>>>> 418df55e98ba05fb01cae793236a375089e385e2
     }
 }

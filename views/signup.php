@@ -78,7 +78,9 @@
             <!-- sign up form -->
             <div class="card rounded shadow-sm mx-auto border-primary" style="max-width: 500px">
                 <div class="card-body bg-dark text-white">
-                    <h5 class="card-title text-center mb-3 py-3">Sign Up a New Account</h5>
+                    <h5 class="card-title text-center mb-3 py-3">
+                        Sign Up a New Account
+                    </h5>
                     <div class="card p-4 bg-dark">
                         <?php require dirname( __DIR__ ) . '/parts/error_box.php'; ?>
                         <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"] ?>">
