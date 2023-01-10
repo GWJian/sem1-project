@@ -25,14 +25,7 @@ class PRODUCT
         
         //execute
         $statement->execute();
-
-        /**
-         * fetch all data brom database
-         * use PDO::FETCH_OBJ if you want array -> name
-         * use PDO::FETCH_ASSOC if you want object  ['name']
-         * or left it empty for PDO::FETCH_BOTH
-         */
-
+s
         //fetchAll
         $product = $statement->fetchAll(PDO::FETCH_ASSOC);
 
