@@ -16,23 +16,17 @@
             </div>
             <div class="col-md-8 content">
                 <br />
-                <h2 class="text-warning">Details - movie 01</h2>
+                <h2 class="text-warning">Details - Product name</h2>
                 <br />
                 <div class="text-white">
                     <h4>Release Date: 1/1/2022</h4>
                     <br />
                     <h4>Language: English</h4>
                     <br />
-                    <h4>Classification: 18</h4>
-                    <br />
-                    <h4>Genre: movie 01</h4>
-                    <br />
-                    <h4>Duration: 100 minutes</h4>
-                    <br />
                     <h4>Price: $100</h4>
                     <br />
                     <p>
-                        Synopsis: movie 01movie 01movie 01movie 01movie 01movie 01movie 01
+                        Description: Description????????
                     </p>
                 </div>
                 <a href="/cart"><button type="button" class="btn btn-danger mb-3">Buy</button></a>

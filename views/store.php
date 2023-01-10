@@ -5,11 +5,11 @@
     // require "includes/functions.php";
     // require "includes/class-movie_management.php";
 
-    //call the MOVIES class
-    $movies = new MOVIES ();
+    //call the products class
+    $products = new PRODUCT ();
 
-    //list out the movies
-    $movies_list = $movies ->listAllMovies();
+    //list out the products
+    $products_list = $products ->listAllProducts();
 ?>
 
 
@@ -19,29 +19,29 @@
 <!-- require the header part -->
 
 
-<!-- Movies -->
+<!-- products -->
 <section class="bg-dark">
     <div class="container">
-        <h1 style="text-align: center; color: #fbca04">Now Showing</h1>
+        <h1 style="text-align: center; color: #fbca04">Product</h1>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <?php foreach ( $movies_list as $movie ): ?>
+            <?php foreach ( $products_list as $product ): ?>
             <div class="col-lg-2">
                 <div class="d-flex position-relative">
                     <div class="hover-background d-flex align-items-center justify-content-center">
                         <div>
                             <a href="/cart"><button type="button" class="btn btn-danger">Buy</button></a>
 
-                            <a href="/movie_deteil"><button type="button" class="btn btn-warning">Info</button></a>
+                            <a href="/product_deteil"><button type="button" class="btn btn-warning">Info</button></a>
                         </div>
                     </div>
-                    <img class="h-50 w-100" src="<?php echo $movie['image_url']; ?>" />
+                    <img class="h-50 w-100" src="<?php echo $product['image_url']; ?>" />
                 </div>
                 <span>
-                    <h3 class="text-center text-white"><?php echo $movie['movie_name']; ?></h3>
-                    <h3 class="text-center text-white">$<?php echo $movie['price']; ?></h3>
+                    <h3 class="text-center text-white"><?php echo $product['product_name']; ?></h3>
+                    <h3 class="text-center text-white">$<?php echo $product['price']; ?></h3>
                 </span>
             </div>
             <?php endforeach; ?>
