@@ -1,11 +1,11 @@
 <?php
 
     // start session
-    // session_start();
+    session_start();
 
     // require all the classes & functions files
-    // require "includes/functions.php";
-    // require "includes/class-movie_management.php";
+    require "includes/functions.php";
+    require "includes/class-movie_management.php";
     // =================
     require "includes/class-db.php";
     require "includes/class-user.php";

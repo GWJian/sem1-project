@@ -60,8 +60,11 @@ class DB
     /**
      * Trigger DELETE command via PDO
      */
-    public function delete()
+    public function delete( $sql )
     {
-
+        $statement = $this->db->prepare( $sql );
+        $statement->execute ([
+            'id' => $_POST['delete_movie_id']
+        ]);
     }
 }

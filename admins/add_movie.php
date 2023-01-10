@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    require "includes/functions.php";
+    // session_start();
+    // require "includes/functions.php";
 ?>
 <!-- require the header part -->
 <?php require "parts/header.php" ?>

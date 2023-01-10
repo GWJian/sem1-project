@@ -1,8 +1,8 @@
 <?php  
-    session_start();
+    // session_start();
     //load file then only start functions
-    require "includes/functions.php";
-    require "includes/class-movie_management.php";
+    // require "includes/functions.php";
+    // require "includes/class-movie_management.php";
 
 
     //call the MOVIES class
@@ -33,7 +33,7 @@
                 </button></a>
         </div>
 
-        <form action="../includes/class-movie_delete.php" method="POST">
+        <form action="" method="POST">
             <table class="table bg-white">
                 <thead>
                     <tr>
@@ -41,10 +41,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Genre</th>
                         <th scope="col">Language</th>
-                        <th scope="col">Duration</th>
                         <th scope="col">Release Date</th>
-                        <th scope="col">Classification</th>
-                        <th scope="col">Synopsis</th>
                         <th scope="col">Price</th>
                         <th scope="col">Option</th>
                     </tr>
@@ -52,21 +49,18 @@
                 <tbody>
                     <?php foreach ( $movies_list as $movie ): ?>
                     <tr>
-                        <th scope="row"><?php echo $movie['id']; ?></th>
+                        <th scope="row"></th>
                         <td><?php echo $movie['movie_name']; ?></td>
                         <td><?php echo $movie['genre']; ?></td>
                         <td><?php echo $movie['language']; ?></td>
-                        <td><?php echo $movie['duration']; ?></td>
                         <td><?php echo $movie['releasedate']; ?></td>
-                        <td><?php echo $movie['classification']; ?></td>
-                        <td style="overflow: hidden;white-space: nowrap;width: 200px;display: block;">
-                            <?php echo $movie['synopsis']; ?>
-                        </td>
                         <td>$<?php echo $movie['price']; ?></td>
                         <td>
+                            <!-- =============----edit form----================== -->
                             <a href="/edit_movie">
                                 <button type="button" class="btn-success btn mb-2">Edit</button>
                             </a>
+                            <!-- =============----edit form----================== -->
                         </td>
                         <td>
                             <!-- =============----delete form----================== -->
