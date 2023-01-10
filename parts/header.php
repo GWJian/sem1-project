@@ -38,15 +38,15 @@ body {
                 </ul>
 
                 <div class="text-end">
-                    <a href="/login">
-                        <button type="button" class="btn btn-outline-light me-2">
-                            Login
-                        </button></a>
-                    <a href="/signup"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                    <?php if (AUTHENTICATION::isLoggedIn()) : ?>
                     <a href="/logout"><button type="button" class="btn btn-danger">Logout</button></a>
-                    <a href="/admin_page"><button type="button" class="btn btn-primary">
-                            admin page
-                        </button></a>
+                    <a href="/admin_page"><button type="button" class="btn btn-primary">admin page</button>
+                        <?php else : ?>
+                        <a href="/login"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+                        <a href="/signup"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                        <?php endif; ?>
+
+                    </a>
                 </div>
             </div>
         </div>
