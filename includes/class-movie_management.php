@@ -1,6 +1,6 @@
 <?php
 
-class MOVIES
+class PRODUCT
 {
     public $database;
 
@@ -15,13 +15,13 @@ class MOVIES
     }
 
     /**
-     * retrieve all movies from database
+     * retrieve all product from database
      */
-    public function listAllMovies()
+    public function listAllProducts()
     {
-        $movies = [];
+        $product = [];
         // prepare the database, execute, and the fetchAll
-        $statement = $this->database->prepare('SELECT * FROM movies');
+        $statement = $this->database->prepare('SELECT * FROM products');
         
         //execute
         $statement->execute();
@@ -34,9 +34,9 @@ class MOVIES
          */
 
         //fetchAll
-        $movies = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $product = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        return $movies;
+        return $product;
     }
 
     /**
@@ -55,5 +55,3 @@ class MOVIES
         *  }
      */
 }
-
-

@@ -27,7 +27,7 @@ body {
                         <a href="/" class="nav-link px-2 text-white">Home</a>
                     </li>
                     <li>
-                        <a href="/movie" class="nav-link px-2 text-white">Store</a>
+                        <a href="/store" class="nav-link px-2 text-white">Store</a>
                     </li>
                     <li>
                         <a href="/cart" class="nav-link px-2 text-white">Cart</a>

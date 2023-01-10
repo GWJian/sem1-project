@@ -1,7 +1,6 @@
 <!-- require the header part -->
-<?php require "parts/header.php" ?>
+<?php require 'parts/header.php' ?>
 <!-- require the header part -->
-
 
 
 <!-- admin main page -->
@@ -12,13 +11,12 @@
 
     <div class="container">
         <div class="list-group w-auto">
-            <a href="/movie_management" class="list-group-item list-group-item-action d-flex gap-3 py-3"
-                aria-current="true">
+            <a href="/management" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                 <img src="https://cdn-icons-png.flaticon.com/512/31/31087.png" alt="twbs" width="32" height="32"
                     class="rounded-circle flex-shrink-0" />
                 <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                        <h6 class="mb-0">Movie Management</h6>
+                        <h6 class="mb-0">Product Management</h6>
                     </div>
                 </div>
             </a>
@@ -27,7 +25,7 @@
                     alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
                 <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                        <h6 class="mb-0">Ticket order</h6>
+                        <h6 class="mb-0">Cart</h6>
                     </div>
                 </div>
             </a>
@@ -36,5 +34,5 @@
 </section>
 
 <!-- require the footer part -->
-<?php require "parts/footer.php" ?>
+<?php require 'parts/footer.php' ?>
 <!-- require the footer part -->

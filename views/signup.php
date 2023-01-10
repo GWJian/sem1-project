@@ -6,7 +6,7 @@
     // make sure user not already logged-in,
     // if user is already logged in, redirect the user to dashboard
     if ( AUTHENTICATION::isLoggedIn() )
-    {   
+    {
       header('Location:/dashboard');
       exit;
     }
@@ -23,28 +23,44 @@
       $confirm_password = $_POST['confirm_password'];
 
       // step #1: do error check
+      $error = FORMVALIDATION::validate(
+            $_POST,
+            [
+                'name'=>'required',
+                'email'=>'email_check',
+                'password'=>'required',
+                'confirm_password'=>'is_password_match',
+            ]
+        );
+        // step #2: make sure email is unique (not in the database)
+        $isEmailInUsed = FormValidation::checkEmailUniqueness( $email );
+        if ( $isEmailInUsed )
+        {
+            $error = $isEmailInUsed;
+        }
 
-
-      // step #2: make sure email is unique (not in the database)
-      
-
-      // step #3: insert user into database
-      $user_id = AUTHENTICATION::signup(
-        $name,
-        $email,
-        $password
-      );
-
-
-      // step #4: assign the user data to $_SESSION['user'] data
-      AUTHENTICATION::setSession($user_id);
-
-      // step #5: redirect the user to dashboard
-        //5.1: remove csrf token
-
-        //5.2: redirect user to dashboard
-        header('Location:/dashboard');
+        // make sure $error is false
+        if ( !$error ) {
         
+            // step #3: insert user into database
+            $user_id = Authentication::signup(
+                $name,
+                $email,
+                $password
+            );
+
+            // step #4: assign the user data to $_SESSION['user'] data
+            Authentication::setSession( $user_id );
+
+            // step #5: redirect the user to dashboard
+            // 5.1: remove csrf token
+
+
+            // 5.2: redirect user to dashboard
+            header('Location: /dashboard');
+            exit;
+
+        } // end - !$error
     }
 
 ?>
@@ -66,6 +82,7 @@
                         Sign Up a New Account
                     </h5>
                     <div class="card p-4 bg-dark">
+                        <?php require dirname( __DIR__ ) . '/parts/error_box.php'; ?>
                         <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"] ?>">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>

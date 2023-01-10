@@ -8,11 +8,9 @@ class DELETE
 
     public static function delete_btn ( $del_id )
     {
-        if (isset($_POST['delete_movie_id']))
+        if (isset($_POST['delete_movie']))
         {
-            // var_dump($_POST['delete_movie_id']);
-            //delete
-            $statement = DB::connect()->
+            'DELETE FROM movies WHERE id = :id';
         }
     }
 }

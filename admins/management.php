@@ -4,32 +4,31 @@
     // require "includes/functions.php";
     // require "includes/class-movie_management.php";
 
-
     //call the MOVIES class
-    $movies = new MOVIES ();
+    $products = new PRODUCT ();
     
     //list out the movies
-    $movies_list = $movies ->listAllMovies();
+    $products_list = $products ->listAllProducts();
 
 ?>
 
 <!-- require the header part -->
-<?php require "parts/header.php" ?>
+<?php require 'parts/header.php' ?>
 <!-- require the header part -->
 
 
-<!-- admin movie management -->
+<!-- admin Product management -->
 <section class="bg-dark vh-100">
     <div class="container">
-        <h2 style="color: #fbca04">Movie Management</h2>
+        <h2 style="color: #fbca04">Product Management</h2>
         <div class="float-end">
             <a href="/admin_page">
                 <button type="button" class="btn-danger btn btn-outline-light mb-2">
                     Back
                 </button></a>
-            <a href="/add_movie">
+            <a href="/add_product">
                 <button type="button" class="btn-info btn btn-outline-light mb-2">
-                    Add Movie
+                    Add Product
                 </button></a>
         </div>
 
@@ -39,22 +38,22 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Genre</th>
                         <th scope="col">Language</th>
                         <th scope="col">Release Date</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Description</th>
                         <th scope="col">Option</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ( $movies_list as $movie ): ?>
+                    <?php foreach ( $products_list as $product ): ?>
                     <tr>
                         <th scope="row"></th>
-                        <td><?php echo $movie['movie_name']; ?></td>
-                        <td><?php echo $movie['genre']; ?></td>
-                        <td><?php echo $movie['language']; ?></td>
-                        <td><?php echo $movie['releasedate']; ?></td>
-                        <td>$<?php echo $movie['price']; ?></td>
+                        <td><?php echo $product['product_name']; ?></td>
+                        <td><?php echo $product['language']; ?></td>
+                        <td><?php echo $product['releasedate']; ?></td>
+                        <td>$<?php echo $product['price']; ?></td>
+                        <td>Maybe not</td>
                         <td>
                             <!-- =============----edit form----================== -->
                             <a href="/edit_movie">
@@ -64,7 +63,7 @@
                         </td>
                         <td>
                             <!-- =============----delete form----================== -->
-                            <input type="hidden" name="delete_movie_id" value="<?php echo $movie['id'] ?>">
+                            <input type="hidden" name="delete_movie" value="<?php echo $product['id'] ?>">
                             <input type="submit" name="delete" value="Remove" class="btn btn-danger">
                             <!-- =============----delete form----================== -->
                         </td>
@@ -77,5 +76,5 @@
 </section>
 
 <!-- require the footer part -->
-<?php require "parts/footer.php" ?>
+<?php require 'parts/footer.php' ?>
 <!-- require the footer part -->

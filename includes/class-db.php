@@ -64,7 +64,7 @@ class DB
     {
         $statement = $this->db->prepare( $sql );
         $statement->execute ([
-            'id' => $_POST['delete_movie_id']
+            'id' => $_POST['delete_movie']
         ]);
     }
 }
