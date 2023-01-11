@@ -45,8 +45,8 @@ require dirname(__DIR__) . '/parts/header.php';
                     <td class="text-end">
                         <div class="buttons">
                             <a href="/manage-users-edit?id=<?php echo $user['id']; ?>"
-                                class="btn btn-success btn-sm me-2"><i class="bi bi-pencil"></i></a>
-                            <a href="#" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
+                                class="btn btn-success btn-sm me-2">Edit</a>
+                            <a href="#" class="btn btn-danger btn-sm">Remove</a>
                         </div>
                     </td>
                 </tr>
