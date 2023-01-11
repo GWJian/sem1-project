@@ -11,6 +11,7 @@
     require "includes/class-user.php";
     require "includes/class-authentication.php";
     require "includes/class-form-validation.php";
+    require "includes/class-csrf.php";
 
 //get route from the global variable
 $path = $_SERVER[ "REQUEST_URI" ];
@@ -24,46 +25,49 @@ $path = parse_url( $path , PHP_URL_PATH );
 // var_dump( $path );
 
 switch( $path ) {
-    case 'contant_us':
-        require "views/contant_us.php";
-        break;
     case 'login':
         require "views/login.php";
         break;
     case 'logout':
         require "views/logout.php";
         break;
-    case 'product_deteil':
-        require "views/product_deteil.php";
-        break;      
-    case 'logout':
-        require "views/logout.php";
-        break;
-    case 'store':
-        require "views/store.php";
-        break;
     case 'signup':
         require "views/signup.php";
         break;
-
-    // =========== Admin ==============
-    case 'add_product':
-        require "admins/add_product.php";
+    case 'product_deteil':
+        require "views/product_deteil.php";
+        break;      
+    case 'store':
+        require "views/store.php";
         break;
+    case 'contant_us':
+        require "views/contant_us.php";
+        break;
+                    
+    // =========== Admin ==============
     case 'admin_page':
         require "admins/admin_page.php";
         break;
-    case 'edit_movie':
-        require "admins/edit_store.php";
+    case 'add_product':
+        require "admins/management-add_product.php";
+        break;
+    case 'edit_product':
+        require "admins/management-edit_product.php";
         break;
     case 'management':
-        require "admins/management.php";
+        require "admins/management-product.php";
+        break;
+    case 'manage-users':
+        require 'admins/manage-users.php';
+        break;
+    case 'manage-users-edit':
+        require 'admins/manage-users-edit.php';
+        break;
+    case 'manage-users-add':
+        require 'admins/manage-users-add.php';
         break;
     case 'cart':
         require "admins/cart.php";
-        break;
-    case 'dashboard':
-        require 'admins/dashboard.php';
         break;
 
     // =========== Home ===============

@@ -1,13 +1,13 @@
 <?php
 
     // set CSRF token
-
+    CSRF::generateToken( 'signup_form' );
 
     // make sure user not already logged-in,
     // if user is already logged in, redirect the user to dashboard
     if ( AUTHENTICATION::isLoggedIn() )
     {
-      header('Location:/dashboard');
+      header('Location:/');
       exit;
     }
 
@@ -28,8 +28,9 @@
             [
                 'name'=>'required',
                 'email'=>'email_check',
-                'password'=>'required',
+                'password'=>'password_check',
                 'confirm_password'=>'is_password_match',
+                'csrf_token' => 'signup_form_csrf_token'
             ]
         );
         // step #2: make sure email is unique (not in the database)
@@ -38,8 +39,6 @@
         {
             $error_emailinused = $isEmailInUsed;
         }
-
-        //check here
 
         // make sure $error is false
         if ( !$error ) {
@@ -56,10 +55,10 @@
 
             // step #5: redirect the user to dashboard
             // 5.1: remove csrf token
-
+            CSRF::removeToken( 'signup_form' );
 
             // 5.2: redirect user to dashboard
-            header('Location: /dashboard');
+            header('Location: /');
             exit;
 
         } // end - !$error
@@ -109,6 +108,8 @@
                                 </button>
                             </div>
                             <!-- insert csrf token input here -->
+                            <input type="hidden" name="csrf_token"
+                                value="<?php echo CSRF::getToken( 'signup_form' ) ?>">
                         </form>
                     </div>
                 </div>

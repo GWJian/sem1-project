@@ -1,3 +1,12 @@
+<?php
+//only admin can access
+if ( !AUTHENTICATION::whoCanAccess('editor') ){
+    header('Location:/admin_page');
+    exit;
+}
+
+
+?>
 <!-- require the header part -->
 <?php require 'parts/header.php' ?>
 <!-- require the header part -->
@@ -20,15 +29,19 @@
                     </div>
                 </div>
             </a>
-            <a href="/cart" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+            <?php if ( Authentication::whoCanAccess('admin') ) : ?>
+            <a href="/manage-users" class="list-group-item list-group-item-action d-flex gap-3 py-3"
+                aria-current="true">
                 <img src="https://thumbs.dreamstime.com/b/ticket-icon-white-background-vector-illustration-eps-113357837.jpg"
                     alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0" />
                 <div class="d-flex gap-2 w-100 justify-content-between">
                     <div>
-                        <h6 class="mb-0">Cart</h6>
+                        <h6 class="mb-0">Manage Users</h6>
                     </div>
                 </div>
             </a>
+            <?php endif; ?>
         </div>
     </div>
 </section>

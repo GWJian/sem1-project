@@ -27,14 +27,21 @@ class DB
 /**
      * Trigger SELECT command via PDO
      */
-    public function select( $sql, $data = [])
+    public function select( $sql, $data = [],$is_list = false)
     {
         //prepare
         $statement = $this->db->prepare( $sql );
         //execute
         $statement->execute($data);
+        //if $is_list = false then return only single record
+        //if $is_list = true then return all the record 
         //fetch
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        if ( $is_list ){
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            return $statement->fetch(PDO::FETCH_ASSOC);
+        }
+        
     }
 
     /**
@@ -52,19 +59,22 @@ class DB
     /**
      * Trigger UPDATE command via PDO
      */
-    public function update()
+    public function update( $sql,$data=[] )
     {
-
+        $statement = $this->db->prepare($sql);
+        $statement ->execute($data);
+        return $statement->rowCount();
     }
 
     /**
      * Trigger DELETE command via PDO
      */
-    public function delete( $sql )
+    public function delete($sql,$data=[])
     {
-        $statement = $this->db->prepare( $sql );
-        $statement->execute ([
-            'id' => $_POST['delete_movie']
-        ]);
+        {
+            $statement = $this->db->prepare($sql);
+            $statement -> execute ($data);
+            return $statement->rowCount();
+        }
     }
 }

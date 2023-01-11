@@ -56,7 +56,7 @@
                         <td>Maybe not</td>
                         <td>
                             <!-- =============----edit form----================== -->
-                            <a href="/edit_movie">
+                            <a href="/edit_product">
                                 <button type="button" class="btn-success btn mb-2">Edit</button>
                             </a>
                             <!-- =============----edit form----================== -->

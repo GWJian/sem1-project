@@ -16,3 +16,6 @@ copying login and error
 
 11/jan 2023
 check signup line 42
+signup error complete
+
+csrf token add in login and update

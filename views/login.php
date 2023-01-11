@@ -1,13 +1,13 @@
 <?php
 
- // set CSRF token
-
+    // set CSRF token
+    CSRF::generateToken( 'login_form' );
 
     // make sure if the user wasn't logged in yet. 
     // If the user already logged in, we'll redirect to dashboard page
     if ( Authentication::isLoggedIn() )
     {
-      header('Location: /dashboard');
+      header('Location: /');
       exit;
     }
 
@@ -50,10 +50,10 @@
 
       // Step 4: remove csrf token & redirect the user to dashboard
         // 4.1: remove csrf token
-
+        CSRF::removeToken( 'login_form' );
 
         // 4.2: redirect to dashboard
-        header('Location: /dashboard');
+        header('Location: /');
         exit;
 
       } //end -!$user_id
@@ -78,6 +78,7 @@
                         <h5 class="card-title text-center mb-3 py-3 border-bottom">
                             Login To Your Account
                         </h5>
+
                         <form action="" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
@@ -92,6 +93,8 @@
                                     Login
                                 </button>
                             </div>
+                            <!-- insert csrf token input here -->
+                            <input type="hidden" name="csrf_token" value="<?php echo CSRF::getToken( 'login_form' ) ?>">
                         </form>
                 </div>
             </div>
