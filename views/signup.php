@@ -36,7 +36,7 @@
         $isEmailInUsed = FormValidation::checkEmailUniqueness( $email );
         if ( $isEmailInUsed )
         {
-            $error = $isEmailInUsed;
+            $error_emailinused = $isEmailInUsed;
         }
 
         //check here
