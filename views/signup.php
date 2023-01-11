@@ -39,6 +39,8 @@
             $error = $isEmailInUsed;
         }
 
+        //check here
+
         // make sure $error is false
         if ( !$error ) {
         
