@@ -31,18 +31,14 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `user` varchar(255) DEFAULT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'user',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `users` (`id`, `name`, `password`, `email`, `user`, `created_at`) VALUES
-(1,	'',	'$2y$10$bZrhY2/7s9N485JaRkTmXe184Vt1zGf/lW7UGOje4RZTLuf64I2l.',	'',	NULL,	'2023-01-09 13:02:12'),
-(2,	'user1',	'$2y$10$n5PTWWYfAHgWNGYUa3s5oONjXnhTQgSDWfQ/JOd9PbT3PAsairL8a',	'user1@gmail.com',	NULL,	'2023-01-09 13:03:49'),
-(3,	'user2',	'$2y$10$1f/7ETQtzXIZoEyZe21Biu4da8Lv8uQwcHez78EfpOkZDEIAmuOhq',	'user2@gmail.com',	NULL,	'2023-01-09 13:05:09'),
-(4,	'user3',	'$2y$10$y5dsGbWlogGJgPlCFgCKAuDEnhhcHn4zASMMnBm/B6wFzrbsFGTwy',	'user3@live.cn',	NULL,	'2023-01-09 13:05:42'),
-(5,	'user4',	'$2y$10$xr1OqGaflFLi1eJg7CHyrOvF9WiMcEimlqkFhhAoPdys9xF6jnOZe',	'user4@gmail.com',	NULL,	'2023-01-10 12:13:30'),
-(6,	'user5',	'$2y$10$Qa/QjSqeIzXDSDFToeNnXuw.LgYaL8h/c6WZWfr9nlZqsuHFX3TOG',	'user5@gmail.com',	NULL,	'2023-01-10 12:18:07'),
-(7,	'users6',	'$2y$10$fAdsLmQqBC128GpHPTtkMORG8YNySMWl1BsHiOIgTnh57vxP7AigS',	'user6@gmail.com',	NULL,	'2023-01-10 12:40:03');
+INSERT INTO `users` (`id`, `name`, `password`, `email`, `role`, `created_at`) VALUES
+(1,	'admin1',	'$2y$10$mBodZ0qamCLeNyc1qxGW6OCPyn9/WC7CiZhSkso8Y8/Kb53ICgC/.',	'admin1@gmail.com',	'admin',	'2023-01-11 13:31:24'),
+(2,	'user1',	'$2y$10$r.3H3fDGtyEzlQ3c3aTSoO1sUKJ5Rzh3GhwYwMeTQYAsq6Ss0rdOa',	'user1@gmail.com',	'user',	'2023-01-11 13:32:52'),
+(3,	'editor1',	'$2y$10$bM24Q7.KPEWBfvgtxd1s1Omz/MgaZz9wgcJ2jm5T5r9zDMMD4XX/O',	'editor1@gmail.com',	'editor',	'2023-01-11 13:32:57');
 
--- 2023-01-10 13:49:10
+-- 2023-01-11 13:45:28
