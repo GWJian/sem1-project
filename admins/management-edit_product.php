@@ -91,12 +91,8 @@
                 <input type="hidden" id="id" value="1" />
 
                 <div class="mt-2">
-                    <a href="">
-                        <button type="button" class="btn-success btn btn-outline-light">Add Movie</button>
-                    </a>
-                    <a href="/movie_management">
-                        <button type="button" class="btn-danger btn btn-outline-light ">Back</button>
-                    </a>
+                    <a href="" class="btn-success btn btn-outline-light">Add Movie</a>
+                    <a href="/movie_management" class="btn-danger btn btn-outline-light ">Back</a>
                 </div>
 
             </form>

@@ -77,9 +77,7 @@
                     <input type="hidden" name="submit" value="">
                     <input type="submit" name="submit" value="submit" class="btn btn-success">
                 </form>
-                <a href="/movie_management">
-                    <button type="button" class="btn-danger btn btn-outline-light ">Back</button>
-                </a>
+                <a href="/movie_management" class="btn-danger btn btn-outline-light ">Back</a>
             </div>
             </form>
         </div>

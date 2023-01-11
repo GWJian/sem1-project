@@ -36,16 +36,16 @@ body {
                         <a href="/contant_us" class="nav-link px-2 text-white">Contant Us</a>
                     </li>
                     <?php if ( Authentication::whoCanAccess('editor') ) : ?>
-                    <a href="/admin_page"><button type="button" class="btn btn-primary">Admin/Editor</button>
-                        <?php endif; ?>
+                    <a href="/admin_page" class="btn btn-primary">Admin/Editor</a>
+                    <?php endif; ?>
                 </ul>
 
                 <div class="text-end">
                     <?php if (AUTHENTICATION::isLoggedIn()) : ?>
-                    <a href="/logout"><button type="button" class="btn btn-danger">Logout</button></a>
+                    <a href="/logout" class="btn btn-danger">Logout</a>
                     <?php else : ?>
-                    <a href="/login"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
-                    <a href="/signup"><button type="button" class="btn btn-warning">Sign-up</button></a>
+                    <a href="/login" class="btn btn-outline-light me-2">Login</a>
+                    <a href="/signup" class="btn btn-warning">Sign-up</a>
                     <?php endif; ?>
 
                     </a>

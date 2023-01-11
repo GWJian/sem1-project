@@ -22,14 +22,8 @@
     <div class="container">
         <h2 style="color: #fbca04">Product Management</h2>
         <div class="float-end">
-            <a href="/admin_page">
-                <button type="button" class="btn-danger btn btn-outline-light mb-2">
-                    Back
-                </button></a>
-            <a href="/add_product">
-                <button type="button" class="btn-info btn btn-outline-light mb-2">
-                    Add Product
-                </button></a>
+            <a href="/admin_page" class="btn-danger btn btn-outline-light mb-2">Back</a>
+            <a href="/add_product" class="btn-info btn btn-outline-light mb-2">Add Product</a>
         </div>
 
         <form action="" method="POST">
