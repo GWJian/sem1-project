@@ -19,3 +19,7 @@ check signup line 42
 signup error complete
 csrf token add in login and update
 link <button> change to link only
+
+dashboard not complete,edit user delete user
+add remove product not complete
+shopping system not complete
