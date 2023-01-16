@@ -5,9 +5,8 @@
 
     // require all the classes & functions files
     require "includes/functions.php";
-    require "includes/class-movie_management.php";
-    // =================
     require "includes/class-db.php";
+    require "includes/class-product.php";
     require "includes/class-user.php";
     require "includes/class-authentication.php";
     require "includes/class-form-validation.php";
@@ -37,11 +36,14 @@ switch( $path ) {
     case 'product_deteil':
         require "views/product_deteil.php";
         break;      
-    case 'store':
-        require "views/store.php";
+    case 'upcoming':
+        require "views/upcoming.php";
         break;
     case 'contant_us':
         require "views/contant_us.php";
+        break;
+    case 'cart':
+        require "views/cart.php";
         break;
                     
     // =========== Admin ==============
@@ -65,9 +67,6 @@ switch( $path ) {
         break;
     case 'manage-users-add':
         require 'admins/manage-users-add.php';
-        break;
-    case 'cart':
-        require "admins/cart.php";
         break;
 
     // =========== Home ===============

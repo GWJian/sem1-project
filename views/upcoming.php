@@ -1,15 +1,5 @@
 <?php 
     
-    // session_start();
-    //load file then only start functions
-    // require "includes/functions.php";
-    // require "includes/class-movie_management.php";
-
-    //call the products class
-    $products = new PRODUCT ();
-
-    //list out the products
-    $products_list = $products ->listAllProducts();
 ?>
 
 
@@ -22,29 +12,27 @@
 <!-- products -->
 <section class="bg-dark">
     <div class="container">
-        <h1 style="text-align: center; color: #fbca04">Product</h1>
+        <h1 style="text-align: center; color: #fbca04">Upcoming</h1>
     </div>
 
     <div class="container mt-5">
         <div class="row">
-            <?php foreach ( $products_list as $product ): ?>
+
             <div class="col-lg-2">
                 <div class="d-flex position-relative">
                     <div class="hover-background d-flex align-items-center justify-content-center">
                         <div>
-                            <a href="/cart" class="btn btn-danger">Buy</a>
-
                             <a href="/product_deteil" class="btn btn-warning">Info</a>
                         </div>
                     </div>
-                    <img class="h-50 w-100" src="<?php echo $product['image_url']; ?>" />
+                    <img class="h-50 w-100" src="" />
                 </div>
                 <span>
-                    <h3 class="text-center text-white"><?php echo $product['product_name']; ?></h3>
-                    <h3 class="text-center text-white">$<?php echo $product['price']; ?></h3>
+                    <h3 class="text-center text-white"></h3>
+                    <h3 class="text-center text-white"></h3>
                 </span>
             </div>
-            <?php endforeach; ?>
+
 
             <!-- sec img here -->
             <!-- <div class="col-lg-3">

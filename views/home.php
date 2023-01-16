@@ -3,73 +3,70 @@
     // session_start();
     //load file then only start functions
     // require "includes/functions.php";
-    // require "includes/class-product_management.php";
+    // require "includes/class-movie_management.php";
 
-    //call the productS class
+    //call the products class
     $products = new PRODUCT ();
 
     //list out the products
-    $products_list = $products ->listAllproducts();
+    $products_list = $products ->listAllProducts();
 ?>
+
+
 
 <!-- require the header part -->
 <?php require "parts/header.php" ?>
 <!-- require the header part -->
 
-<!-- header -->
-<div class="carouselss">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <?php foreach ( $products_list as $product ): ?>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="<?php echo $product['image_url']; ?>" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <?php endforeach; ?>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+
+<!-- products -->
+<section class="bg-dark">
+    <div class="container">
+        <h1 style="text-align: center; color: #fbca04">Product</h1>
     </div>
-</div>
 
-<!-- Booking-banner -->
-<!-- <div class="booking-banner">
-      <img src="../assets/img/booking-banner.jpg" alt="" class="img-fluid" />
-    </div> -->
-<!-- Booking-banner -->
-<main>
-    <!-- showing tap -->
-    <section class="showing bg-black py-2">
-        <ul class="nav nav-tabs justify-content-lg-start ps-5">
-            <li>
-                <button class="nav-link active">Popular products</button>
-            </li>
-        </ul>
-
-        <!-- =========showing img======== -->
-        <ul class="nav d-flex justify-content-center text-white text-center">
+    <div class="container mt-5">
+        <div class="row">
             <?php foreach ( $products_list as $product ): ?>
-            <li class="position-relative">
-                <div class="hover-background">
-                    <div class="button d-flex flex-column position-absolute top-50 start-50 translate-middle">
-                        <a href="/cart"><button type="button" class="btn btn-danger mb-3">Buy</button></a>
-                        <a href="/product_deteil"><button type="button" class="btn btn-warning">Info</button></a>
-                    </div>
-                </div>
-                <img src="<?php echo $product['image_url']; ?>" alt="" />
-                <p><?php echo $product['product_name']; ?></p>
-            </li>
-            <?php endforeach; ?>
-        </ul>
-    </section>
+            <div class="col-lg-2">
+                <div class="d-flex position-relative">
+                    <div class="hover-background d-flex align-items-center justify-content-center">
+                        <div>
+                            <a href="/cart" class="btn btn-danger">Buy</a>
 
-    <!-- require the footer part -->
-    <?php require "parts/footer.php" ?>
-    <!-- require the footer part -->
+                            <a href="/product_deteil" class="btn btn-warning">Info</a>
+                        </div>
+                    </div>
+                    <img class="h-50 w-100" src="<?php echo $product['image_url']; ?>" />
+                </div>
+                <span>
+                    <h3 class="text-center text-white"><?php echo $product['product_name']; ?></h3>
+                    <h3 class="text-center text-white">$<?php echo $product['price']; ?></h3>
+                </span>
+            </div>
+            <?php endforeach; ?>
+
+            <!-- sec img here -->
+            <!-- <div class="col-lg-3">
+            <div class="d-flex position-relative">
+              <div class="hover-background d-flex align-items-center justify-content-center">
+                <div>
+                  <a href=""
+                    ><span>PHP to other page,synopsis,hover effect</span></a
+                  >
+                </div>
+              </div>
+              <img
+                class="h-75 w-100"
+                src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
+              />
+            </div>
+            <span><h3 class="text-center text-white">movie name</h3></span>
+          </div> -->
+        </div>
+    </div>
+</section>
+
+<!-- require the footer part -->
+<?php require "parts/footer.php" ?>
+<!-- require the footer part -->
