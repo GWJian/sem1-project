@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 
 
 function connectToDB()
@@ -6,6 +6,6 @@ function connectToDB()
     return new PDO(
         'mysql:host=devkinsta_db;dbname=Final_project',
         'root',
-        '4JqGyoVdUoAAEJxU'
+        'kxwGCh40Sn6AvFJB'
     );
-}
+} -->

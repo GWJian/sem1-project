@@ -23,3 +23,12 @@ link <button> change to link only
 dashboard not complete,edit user delete user
 add remove product not complete
 shopping system not complete
+
+16-jan-2023
+user all done
+new user done
+edit user done
+delete function done
+
+product manage
+delete done

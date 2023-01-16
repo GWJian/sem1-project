@@ -1,6 +1,5 @@
 <?php
-    // session_start();
-    // require "includes/functions.php";
+
 ?>
 <!-- require the header part -->
 <?php require 'parts/header.php' ?>
@@ -36,11 +35,10 @@
                             <div>
                                 <label for="language">Language:</label>
                                 <select class="form-control" id="language" name="language">
-                                    <option></option>
+                                    <option>Choose Language</option>
                                     <option>English</option>
                                     <option>Mandarin</option>
                                     <option>Japanese</option>
-                                    <option>Korean</option>
                                 </select>
                             </div>
                         </div>
@@ -73,11 +71,11 @@
             </div>
 
             <div class="mt-2">
-                <form action="../includes/class-insert_store.php" method="POST">
+                <form action="" method="POST">
                     <input type="hidden" name="submit" value="">
                     <input type="submit" name="submit" value="submit" class="btn btn-success">
                 </form>
-                <a href="/movie_management" class="btn-danger btn btn-outline-light ">Back</a>
+                <a href="/management" class="btn-danger btn">Back</a>
             </div>
             </form>
         </div>

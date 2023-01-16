@@ -76,7 +76,7 @@ class User
       /**
        * Delete user
        */
-      public static function delete($user_id )
+      public static function delete($user_id)
       {
         return DB::connect()->delete(
             'DELETE FROM users WHERE id=:id',

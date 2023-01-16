@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="form-group d-flex">
+                    <div class="d-flex">
                         <div class="col-sm-10">
                             <label for="img">Image:</label>
                             <input type="text" class="form-control" id="" value="" />
@@ -31,15 +31,8 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div>
-                            <label for="genre">Genre:</label>
-                            <input type="text" class="form-control" id="genre" value="movie 01" />
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div>
-                            <label for="language">Language:</label>
-                            <select class="form-control" id="language">
+                            <label>Language:</label>
+                            <select class="form-control" name="language">
                                 <option>English</option>
                                 <option>Mandarin</option>
                                 <option>Japanese</option>
@@ -52,49 +45,30 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div>
-                            <label for="genre">Duration (minutes):</label>
-                            <input type="text" class="form-control" id="duration" value="100" />
+                            <label>Release Date:</label>
+                            <input type="text" class="form-control" id="releaseDate" name="releasedate" />
                         </div>
                     </div>
 
                     <div class="col-sm-6">
                         <div>
-                            <label for="language">Release Date:</label>
-                            <input type="text" class="form-control" id="releaseDate" value="1/1/2022" />
+                            <label>Price:</label>
+                            <input type="text" class="form-control" id="releaseDate" name="price" />
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div>
-                            <label for="classification">Classification:</label>
-                            <select class="form-control" id="classification">
-                                <option>U</option>
-                                <option>PG</option>
-                                <option>12</option>
-                                <option>18</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
 
                 <div>
-                    <label for="movietrailer">Movie Trailer:</label>
-                    <input type="text" class="form-control" id="movieTrailer" value="https://www.youtube.com/" />
-                </div>
-
-                <div>
-                    <label for="synopsis">Synopsis:</label>
-                    <textarea class="form-control mt-2" rows="10">text</textarea>
+                    <label>Description:</label>
+                    <textarea class="form-control mt-2" rows="10" name="description">text</textarea>
                 </div>
                 <input type="hidden" id="id" value="1" />
 
                 <div class="mt-2">
-                    <a href="" class="btn-success btn btn-outline-light">Add Movie</a>
-                    <a href="/movie_management" class="btn-danger btn btn-outline-light ">Back</a>
+                    <a class="btn-success btn btn-outline-light">Add Movie</a>
+                    <a href="/management" class="btn-danger btn btn-outline-light">Back</a>
                 </div>
-
             </form>
         </div>
     </div>

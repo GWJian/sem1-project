@@ -1,8 +1,41 @@
 <?php
 //only admin can access
+//only admin can access
 if ( !AUTHENTICATION::whoCanAccess('admin') ){
-    header('Location:/dashboard');
+    header('Location:/admin_page');
     exit;
+}
+
+// Step 1: generate CSRF token
+CSRF::generateToken( 'delete_user_form' );
+
+// Step 2: make sure it's POST request
+if ( $_SERVER["REQUEST_METHOD"] === 'POST' )
+{
+    // step 3: do error check
+    $error = FORMVALIDATION::validate(
+        $_POST,
+        [
+            'user_id'=>'required',
+            'csrf_token'=>'delete_user_form_csrd_token'
+        ]
+    );
+
+    // make sure there is no error
+    if ( !$error )
+    {
+        // step 4: delete user
+        User::delete($_POST['user_id']);
+
+        // step 5: remove CSRF token
+        CSRF::removeToken( 'delete_user_form' );
+    
+        // step 6: redirect back to the same page
+        header("Location: /manage-users");
+        exit;
+        
+    }
+
 }
 
 require dirname(__DIR__) . '/parts/header.php';?>
@@ -26,9 +59,9 @@ require dirname(__DIR__) . '/parts/header.php';?>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach( User::getAllUsers() as $user ) : ?>
+                <?php foreach( User::getAllUsers() as $index =>$user ) : ?>
                 <tr>
-                    <th scope="row"><?php echo $user['id']; ?></th>
+                    <th scope="row"><?php echo $index+1; ?></th>
                     <td><?php echo $user['name']; ?></td>
                     <td><?php echo $user['email']; ?></td>
                     <td><?php switch($user['role']){

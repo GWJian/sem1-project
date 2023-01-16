@@ -10,7 +10,7 @@ class DB
             $this->db = new PDO(
                 'mysql:host=devkinsta_db;dbname=Final_project',
                 'root',
-                '4JqGyoVdUoAAEJxU'
+                'kxwGCh40Sn6AvFJB'
             );
         }catch( PDOException $error ){
             die( "Database connection failed" );

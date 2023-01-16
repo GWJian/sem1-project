@@ -73,20 +73,27 @@ class FORMVALIDATION
                     }
                     break;
                 case 'login_form_csrf_token';
-                    // $data[$key] = $_POST['csrf_token'];
                     if(!CSRF::verifyToken( $data[$key],'login_form' )){
                         $error .= 'Invalid CSRF Token<br/> ';
                     }
                     break;
                 case 'signup_form_csrf_token';
-                    // $data[$key] = $_POST['csrf_token'];
                     if(!CSRF::verifyToken( $data[$key],'signup_form' )){
                         $error .= 'Invalid CSRF Token<br/> ';
                     }
                     break;
                 case 'add_user_form';
-                    // $data[$key] = $_POST['csrf_token'];
-                    if(!CSRF::verifyToken( $data[$key],'signup_form' )){
+                    if(!CSRF::verifyToken( $data[$key],'add_user_form' )){
+                        $error .= 'Invalid CSRF Token<br/> ';
+                    }
+                    break;
+                case 'delete_user_form';
+                    if(!CSRF::verifyToken( $data[$key],'delete_user_form' )){
+                        $error .= 'Invalid CSRF Token<br/> ';
+                    }
+                    break;
+                case 'delete_product_form';
+                    if(!CSRF::verifyToken( $data[$key],'delete_product_form' )){
                         $error .= 'Invalid CSRF Token<br/> ';
                     }
                     break;

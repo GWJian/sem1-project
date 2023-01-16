@@ -7,6 +7,7 @@
     <title>GC</title>
     <link rel="stylesheet" href="../assets/css/style.css?v=<?= time()?> " />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
 </head>
 
 <style type="text/css">

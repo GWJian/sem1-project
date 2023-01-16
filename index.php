@@ -4,7 +4,6 @@
     session_start();
 
     // require all the classes & functions files
-    require "includes/functions.php";
     require "includes/class-db.php";
     require "includes/class-product.php";
     require "includes/class-user.php";
