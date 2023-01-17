@@ -1,3 +1,16 @@
+<?php
+
+// make sure only admin can access
+if ( !Authentication::whoCanAccess('user') ) {
+    header('Location:/dashboard');
+    exit;
+}
+
+//load post data
+
+
+?>
+
 <!-- require the header part -->
 <?php require "parts/header.php" ?>
 <!-- require the header part -->
@@ -10,8 +23,7 @@
             <div class="col-md-4">
                 <div class="PosterArt">
                     <br />
-                    <img src="https://m.media-amazon.com/images/M/MV5BYmZlZDZkZjYtNzE5Mi00ODFhLTk2OTgtZWVmODBiZTI4NGFiXkEyXkFqcGdeQXVyMTE5MTg5NDIw._V1_.jpg"
-                        class="img-responsive" style="width: 360px; height: 480px" />
+                    <img src="" class="img-responsive" style="width: 360px; height: 480px" />
                 </div>
             </div>
             <div class="col-md-8 content">

@@ -55,28 +55,26 @@ class PRODUCT
     /**
      * Add new product
     */
-    public static function add ($user_id,$product_name,$image_url,$language,$releasedate,$price,$description,$status)
+    public static function add ($user_id,$product_name,$image_url,$releasedate,$price,$description)
     {   
       return DB::connect()->insert(
-          'INSERT INTO products (user_id,product_name,image_url,language,releasedate,price,description,status)
-          VALUES (:user_id,:product_name,:image_url,:language,:releasedate,:price,:description,:status)',
+          'INSERT INTO products (user_id,product_name,image_url,releasedate,price,description)
+          VALUES (:user_id,:product_name,:image_url,:releasedate,:price,:description)',
           [
             'user_id'=>$user_id,//get data that who doing the new product
             'product_name'=>$product_name,
             'image_url'=>$image_url,
-            'language'=>$language,
             'releasedate'=>$releasedate,
             'price'=>$price,
             'description'=>$description,
-            'status'=>$status,
           ]
       );
     }
 
     /**
-     * Update product details
+     * update product details
     */
-    public static function update ( $id,$product_name,$image_url,$language,$releasedate,$price,$description,$status)
+    public static function update ($id,$product_name,$image_url,$releasedate,$price,$description,$status)
     {
       //setup params
       $params=
@@ -84,18 +82,23 @@ class PRODUCT
           'id'=>$id,
           'product_name'=>$product_name,
           'image_url'=>$image_url,
-          'language'=>$language,
           'releasedate'=>$releasedate,
           'price'=>$price,
           'description'=>$description,
+          'status'=>$status,
       ];
 
-        //update user data into the database
+        //update data into the database
         return DB::connect()->update
         (
-        'UPDATE products SET id=:id , product_name=:product_name , image_url=:image_url 
-        ,language=:language ,releasedate=:releasedate ,price=:price ,description=:description 
-        WHERE id=:id',
+        'UPDATE products SET
+         product_name = :product_name, 
+         image_url=  :image_url,
+         releasedate = :releasedate,
+         price = :price,
+         description = :description,
+         status = :status 
+         WHERE id = :id',
             $params
         );
         }

@@ -60,7 +60,7 @@ if ( $_SERVER["REQUEST_METHOD"] === 'POST' )
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Language</th>
+                        <th scope="col">Img</th>
                         <th scope="col">Release Date</th>
                         <th scope="col">Price</th>
                         <th scope="col">Description</th>
@@ -73,14 +73,14 @@ if ( $_SERVER["REQUEST_METHOD"] === 'POST' )
                     <tr>
                         <th scope="row"></th>
                         <td><?php echo $product['product_name']; ?></td>
-                        <td><?php echo $product['language']; ?></td>
+                        <td><img src="<?php echo $product['image_url']; ?>" style="height: 15vh; width: 15vh;"></td>
                         <td><?php echo $product['releasedate']; ?></td>
                         <td>$<?php echo $product['price']; ?></td>
                         <td><?php echo $product['description']; ?></td>
                         <td><?php echo $product['status']; ?></td>
                         <td>
                             <!-- =============----edit form----================== -->
-                            <a href="/edit_product">
+                            <a href="/edit_product?id=<?php echo $product['id']; ?>">
                                 <button type="button" class="btn-success btn mb-2 btn-sm"><i
                                         class="bi bi-pencil-square"></i></button>
                             </a>

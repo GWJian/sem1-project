@@ -1,5 +1,5 @@
       <!--  footer -->
-      <section class="bg-dark">
+      <!-- <section class="bg-dark">
           <div class="container">
               <footer class="py-3">
                   <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -14,21 +14,22 @@
                       </li>
                   </ul>
                   <p class="text-center text-muted">
-                      Copyright Reserved © Gold Cinema . All Rights Reserved
+                      Copyright Reserved © Gold C . All Rights Reserved
                   </p>
               </footer>
           </div>
-      </section>
+      </section> -->
       </main>
 
       <!-- --------------------------------------------------------------- -->
-      <footer class="text-white bg-dark text-center py-3">
+      <footer class="text-white bg-dark text-center py-3 mt-5 pt-5">
           <small>For Educational purposes only.</small>
       </footer>
       <!-- --------------------------------------------------------------- -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
       </script>
+
       </body>
 
       </html>

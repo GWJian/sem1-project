@@ -1,5 +1,53 @@
 <?php
 
+  // make sure only admin can access
+  if ( !Authentication::whoCanAccess('editor') ) {
+    header('Location:/dashboard');
+    exit;
+  }
+    // step 1: set CSRF token   
+    CSRF::generateToken('product_add_form'); 
+
+      // step 2: make sure post request
+  if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
+    {
+        // step 3: do error check
+        $rules=[
+            'product_name'=>'required',
+            'image_url'=>'required',
+            'releasedate'=>'required',
+            'price'=>'required',
+            'csrf_token'=>'product_add_form_csrf_token',
+        ];
+
+        $error = FORMVALIDATION::validate(
+            $_POST,
+            $rules
+        );
+
+        if ( !$error ){
+            // step 4: update user  
+            PRODUCT::add(
+                $_SESSION['user']['id'],//defined who is the user id
+                $_POST['product_name'],
+                $_POST['image_url'],
+                $_POST['releasedate'],
+                $_POST['price'],
+                $_POST['description'],
+            );
+
+
+            // step 5: remove the CSRF token
+            CSRF::removeToken( 'product_add_form' );
+
+
+            // step 6:redirect to manage users page
+            header('Location: /management');
+            exit;
+        }// end - $error
+
+    
+    }
 ?>
 <!-- require the header part -->
 <?php require 'parts/header.php' ?>
@@ -12,43 +60,29 @@
     <div class="container text-white pt-5">
         <div class="panel panel-default panel-align">
             <div class="panel-heading">
-                <h2 class="header-align">Add New Movie</h2>
+                <h2 class="header-align">Add Product</h2>
                 <h2></h2>
             </div>
 
             <div class="panel-body">
 
-                <form action="../includes/class-insert_store.php" method="post" enctype="multipart/form-data"
-                    id="insertMovieForm">
+                <?php require dirname( __DIR__ ) . '/parts/error_box.php'; ?>
+                <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
                     <div>
-                        <label for="moviename">Name:</label>
-                        <input type="text" class="form-control" id="moviename" name="moviename" />
+                        <label>Name:</label>
+                        <input type="text" class="form-control" name="product_name" />
                     </div>
 
                     <div>
-                        <label for="img">Image:</label>
-                        <input type="text" class="form-control" id="image" name="image" />
+                        <label>Image:</label>
+                        <input type="text" class="form-control" name="image_url" />
                     </div>
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <div>
-                                <label for="language">Language:</label>
-                                <select class="form-control" id="language" name="language">
-                                    <option>Choose Language</option>
-                                    <option>English</option>
-                                    <option>Mandarin</option>
-                                    <option>Japanese</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div>
-                                <label for="language">Release Date:</label>
-                                <input type="text" class="form-control" id="releaseDate" name="releaseDate" />
+                            <div class="py-3">
+                                <label for="releasedate">Date:</label>
+                                <input type="date" id="releasedate" name="releasedate">
                             </div>
                         </div>
                     </div>
@@ -58,7 +92,7 @@
                         <div class="col-sm-6">
                             <div>
                                 <label for="language">Price:</label>
-                                <input type="text" class="form-control" id="price" name="price" />
+                                <input type="number" class="form-control" name="price" />
                             </div>
                         </div>
                     </div>
@@ -66,8 +100,8 @@
 
 
             <div>
-                <label for="synopsis">Description:</label>
-                <textarea class="form-control" rows="5" id="synopsis" name="synopsis"></textarea>
+                <label>Description:</label>
+                <textarea class="form-control" rows="5" name="description"></textarea>
             </div>
 
             <div class="mt-2">
@@ -77,6 +111,7 @@
                 </form>
                 <a href="/management" class="btn-danger btn">Back</a>
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo CSRF::getToken('product_add_form') ?>">
             </form>
         </div>
     </div>
