@@ -10,6 +10,7 @@
     require "includes/class-authentication.php";
     require "includes/class-form-validation.php";
     require "includes/class-csrf.php";
+    require "includes/class-cart.php";
 
 //get route from the global variable
 $path = $_SERVER[ "REQUEST_URI" ];
@@ -38,8 +39,8 @@ switch( $path ) {
     case 'upcoming':
         require "views/upcoming.php";
         break;
-    case 'contant_us':
-        require "views/contant_us.php";
+    case 'My_Orders':
+        require "views/my_orders.php";
         break;
     case 'cart':
         require "views/cart.php";

@@ -15,9 +15,12 @@
             <div class="col-lg-2">
                 <div class="d-flex position-relative">
                     <div class="hover-background d-flex align-items-center justify-content-center">
+                        <form method="POST" action="/cart?id=<?php echo $product['id']; ?>">
+                            <!-- product id will pass to the cart page -->
+                            <input type="hidden" name="product" value="<?php echo $product['id']; ?>" />
+                            <button class="btn btn-danger me-3">Buy</button>
+                        </form>
                         <div>
-                            <a href="/cart" class="btn btn-danger">Buy</a>
-
                             <a href="/product_deteil?id=<?php echo $product['id']; ?>" class="btn btn-warning">Info</a>
                         </div>
                     </div>
