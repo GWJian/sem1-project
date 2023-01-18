@@ -2,13 +2,12 @@
 
 // make sure only admin can access
 if ( !Authentication::whoCanAccess('user') ) {
-    header('Location:/dashboard');
+    header('Location:/login');
     exit;
 }
 
 //load post data
-
-
+$product = PRODUCT::getProductById( $_GET['id'] );
 ?>
 
 <!-- require the header part -->
@@ -19,31 +18,36 @@ if ( !Authentication::whoCanAccess('user') ) {
 <!-- Movies -->
 <section class="bg-dark">
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="PosterArt">
+        <?php require dirname( __DIR__ ) . '/parts/error_box.php'; ?>
+        <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="PosterArt">
+                        <br />
+                        <img src="<?php echo $product['image_url']; ?>" class="img-responsive"
+                            style="width: 500px; height: 500px" />
+                    </div>
+                </div>
+                <div class="col-md-7 content">
                     <br />
-                    <img src="" class="img-responsive" style="width: 360px; height: 480px" />
+                    <h2 class="text-warning">Details - <?php echo $product['product_name']; ?></h2>
+                    <br />
+                    <div class="text-white">
+                        <h4>Release Date: <?php echo $product['releasedate']; ?></h4>
+                        <br />
+                        <h4>Price: $<?php echo $product['price']; ?></h4>
+                        <br />
+                        <p>
+                            Description: <?php echo $product['description']; ?>
+                        </p>
+                    </div>
+
+                    <a href="/cart"><button type="button" class="btn btn-danger mb-3"
+                            <?php echo ( $product['status'] === 'pending' ? 'hidden' : '' ); ?>>Buy</button></a>
+
                 </div>
             </div>
-            <div class="col-md-8 content">
-                <br />
-                <h2 class="text-warning">Details - Product name</h2>
-                <br />
-                <div class="text-white">
-                    <h4>Release Date: 1/1/2022</h4>
-                    <br />
-                    <h4>Language: English</h4>
-                    <br />
-                    <h4>Price: $100</h4>
-                    <br />
-                    <p>
-                        Description: Description????????
-                    </p>
-                </div>
-                <a href="/cart"><button type="button" class="btn btn-danger mb-3">Buy</button></a>
-            </div>
-        </div>
+        </form>
     </div>
 </section>
 

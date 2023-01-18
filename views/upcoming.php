@@ -16,9 +16,7 @@
                 <div class="d-flex position-relative">
                     <div class="hover-background d-flex align-items-center justify-content-center">
                         <div>
-                            <a href="/cart" class="btn btn-danger">Buy</a>
-
-                            <a href="/product_deteil" class="btn btn-warning">Info</a>
+                            <a href="/product_deteil?id=<?php echo $product['id']; ?>" class="btn btn-warning">Info</a>
                         </div>
                     </div>
                     <img class="h-50 w-100" src="<?php echo $product['image_url'] ?>" />

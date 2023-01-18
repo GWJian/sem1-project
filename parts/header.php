@@ -33,9 +33,6 @@ body {
                     <li>
                         <a href="/cart" class="nav-link px-2 text-white">Cart</a>
                     </li>
-                    <li>
-                        <a href="/contant_us" class="nav-link px-2 text-white">Contant Us</a>
-                    </li>
                     <?php if ( Authentication::whoCanAccess('editor') ) : ?>
                     <a href="/admin_page" class="btn btn-primary">Admin/Editor</a>
                     <?php endif; ?>
