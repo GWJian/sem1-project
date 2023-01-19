@@ -35,6 +35,7 @@ delete done
 
 19-jan-2023
 cart delete btn need to change
+cart increase and dereacse btn not complete
 carf CFRS token not complete
 my order CFRS token not complete
 payment not complete
