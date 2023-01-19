@@ -42,8 +42,13 @@ $product = PRODUCT::getProductById( $_GET['id'] );
                         </p>
                     </div>
 
-                    <a href="/cart"><button type="button" class="btn btn-danger mb-3"
-                            <?php echo ( $product['status'] === 'pending' ? 'hidden' : '' ); ?>>Buy</button></a>
+
+                    <form action=""></form>
+                    <form action="/cart" method="POST">
+                        <button class="btn btn-primary text-white me-1">Add to cart</button>
+                        <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                        <input type="hidden" name="product_name" value="<?php echo $product['product_name']; ?>">
+                    </form>
 
                 </div>
             </div>

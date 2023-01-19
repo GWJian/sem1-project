@@ -10,7 +10,7 @@ if ( !Authentication::whoCanAccess('admin') ) {
 $user = User::getUserById( $_GET['id'] );
 
 // step 1: set CSRF token
-CSRF::generateToken('edit_user+form');
+CSRF::generateToken('edit_user_form');
 
 // step 2: make sure post request
 if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
@@ -21,7 +21,8 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
     $rule=[
         'name'=>'required',
         'email' => 'email_check',
-        'role' => 'required'
+        'role' => 'required',
+        'csrf_token'=>'edit_user_form_csrf_token',
     ];
 
     // if eiter password & confirm_password fields are not empty, 
@@ -44,7 +45,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
 
 
         // step 5: remove the CSRF token
-
+        CSRF::removeToken( 'edit_user_form' );
 
         // step 6:redirect to manage users page
         header('Location: /manage-users');
@@ -104,6 +105,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Update</button>
             </div>
+            <input type="hidden" name="csrf_token" value="<?php echo CSRF::getToken('edit_user_form') ?>">
         </form>
     </div>
     <div class="text-center">

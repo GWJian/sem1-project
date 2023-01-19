@@ -28,13 +28,13 @@ body {
                         <a href="/" class="nav-link px-2 text-white">Home</a>
                     </li>
                     <li>
-                        <a href="/upcoming" class="nav-link px-2 text-white">Upcoming</a>
+                        <a href="/coming_soon" class="nav-link px-2 text-white">Coming Soon</a>
                     </li>
                     <li>
                         <a href="/cart" class="nav-link px-2 text-white">Cart</a>
                     </li>
                     <li>
-                        <a href="/My_Orders" class="nav-link px-2 text-white">My Order</a>
+                        <a href="/my_orders" class="nav-link px-2 text-white">My Order</a>
                     </li>
                     <?php if ( Authentication::whoCanAccess('editor') ) : ?>
                     <a href="/admin_page" class="btn btn-primary">Admin/Editor</a>

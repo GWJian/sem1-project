@@ -2,23 +2,22 @@
 
 class CART
 {
-    public function listAllproductinCart()
+    public static function getAllproductinCart()
     {
         $list = [];
         //check if cart is empty or not
-        if ( isset ( $_SESSION['cart'] )){
+        if ( isset ( $_SESSION['cart'] ))
+        {
             foreach ( $_SESSION['cart'] as $product_id => $quantity){
 
-                //init products class
-                $product_obj = new PRODUCT();
                 //retrieve the product based on the given id
-                $product = $product_obj->getAllProduct( $product_id );
-
-
+                $product = PRODUCT::getProductById( $product_id );
+                // var_dump($product);
                 //push product_id and quantity
-                $list[] = [
+                $list[] = 
+                [
                     'id' => $product_id,
-                    'name' => $product['product_name'],
+                    'product_name' => $product['product_name'],
                     'price' => $product['price'],
                     'total' => $product['price'] * $quantity,
                     'quantity' => $quantity,
@@ -28,20 +27,19 @@ class CART
         return $list;
     }
 
-    public function total()
+    public static function total()
     {
         $cart_total = 0;
-        //get all product in cart
-        $list = $this->listAllproductinCart();
+
         //cauculate the cart total
-        foreach ( $list as $product ){
+        foreach ( self::getAllproductinCart() as $product ){
             $cart_total += $product['total'];
         }
 
         return $cart_total;
     }
 
-    public function add ( $product_id )
+    public static function add ( $product_id )
     {
         //check if there is existing data in $_SESSION['cart']
         if ( isset( $_SESSION['cart'] ) ) {
@@ -54,10 +52,7 @@ class CART
 
         // add product to $cart
         if ( isset ( $cart[$product_id] ) ){
-            // add one quantity into the existing value
-            //long method
-            // $cart[ $product_id ] = $cart [ $product_id ] + 1;
-            //shot method
+            // add one quantity into the existing value 
              $cart[ $product_id ] += 1; // plus one quantity
             } else {
                 $cart[ $product_id ] = 1; //quantity
@@ -67,20 +62,31 @@ class CART
         $_SESSION['cart'] = $cart;
     }
 
-    //update box
-    public function update ( $product_update ){
-        if ( isset ( $_SESSION['cart'][$product_update]) )
+    //increase and decrease item in cart
+    public static function update ( $action,$product_id )
+    {
+        if ( isset ( $_SESSION['cart'][$product_id]) )
         {
-            $_SESSION['cart'][$product_update] = $_POST['quantity'];
+            switch($action){
+                case 'increase' :
+                    ++$_SESSION['cart'][$product_id];
+                    break;
+                case 'decrease' :
+                    if(($_SESSION['cart'][$product_id])==1)
+                    { 
+                        unset($_SESSION['cart'][$product_id]);
+                    }else{
+                        --$_SESSION['cart'][$product_id];
+                    }
+                    break;
+            }
         }
     }
-
-
 
     /**
      * remove product from cart
      */
-    public function removeProductFromCart( $product_id )
+    public static function removeProductFromCart( $product_id )
     {
         // make sure the product_id is already in the cart session data
         if ( isset( $_SESSION['cart'][$product_id] ) ) {
@@ -93,7 +99,7 @@ class CART
      * Empty the cart
      */
 
-     public function emptyCart()
+     public static function emptyCart()
      {
         unset( $_SESSION['cart'] );
      }

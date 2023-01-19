@@ -24,8 +24,9 @@
         [
           'email'=>'required',
           // email is the key, required is the condition
-          'password'=>'required'
+          'password'=>'required',
           // password is the key, required is the condition
+          'csrf_token' => 'login_form_csrf_token'
         ]
       );
 

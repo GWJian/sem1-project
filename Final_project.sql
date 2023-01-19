@@ -23,8 +23,8 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `products` (`id`, `product_name`, `image_url`, `releasedate`, `price`, `description`, `status`, `user_id`) VALUES
-(20,	'FF9',	'https://finalfantasy-ix.square-enix-games.com/img/backgrounds/home-background.jpg',	'20231 Jan 1',	'100',	'Final fantasy 9 remake',	'pending',	5),
-(34,	'headset 1',	'https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g733/gallery/g733-white-gallery-1.png?v=1',	'2023-01-11',	'123',	'fdsfds                                                    ',	'publish',	5);
+(1,	'headset 1',	'https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g733/gallery/g733-white-gallery-1.png?v=1',	'2023-01-17',	'123',	'headset 1?                    ',	'publish',	5),
+(2,	'headset 2',	'https://resource.logitechg.com/w_692,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/audio/g735-wireless-headset/gallery/g735-gallery-1.png?v=1',	'2023-02-24',	'333',	'headset 2                    ',	'publish',	5);
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -44,4 +44,4 @@ INSERT INTO `users` (`id`, `name`, `password`, `email`, `role`, `created_at`) VA
 (8,	'users2',	'$2y$10$KEA7opSfcRRpvlD5HrCQZeSzQ.w1oBTYq3da7L/EqrTBJRI5wZR5O',	'user2@gmail.com',	'user',	'2023-01-16 07:54:24'),
 (9,	'users3',	'$2y$10$puIaBSPRwtrLzuGZnVEMLeAcHxrz5sKMAfNH9MIZLjHekaui.0hoe',	'user3@gmail.com',	'user',	'2023-01-16 07:54:47');
 
--- 2023-01-17 08:00:03
+-- 2023-01-19 07:13:02

@@ -24,6 +24,7 @@ class PRODUCT
        );
     }
 
+    
     /**
      * Retrieve all the publish products
      */
@@ -116,6 +117,5 @@ class PRODUCT
             ]
         );
       }
-
 
 }

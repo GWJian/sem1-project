@@ -6,7 +6,7 @@
 <!-- products -->
 <section class="bg-dark">
     <div class="container">
-        <h1 style="text-align: center; color: #fbca04">Product</h1>
+        <h1 style="text-align: center; color: #fbca04">Coming Soon</h1>
     </div>
 
     <div class="container mt-5">

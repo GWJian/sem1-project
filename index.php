@@ -36,10 +36,10 @@ switch( $path ) {
     case 'product_deteil':
         require "views/product_deteil.php";
         break;      
-    case 'upcoming':
-        require "views/upcoming.php";
+    case 'coming_soon':
+        require "views/coming_soon.php";
         break;
-    case 'My_Orders':
+    case 'my_orders':
         require "views/my_orders.php";
         break;
     case 'cart':

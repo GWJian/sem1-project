@@ -107,6 +107,16 @@ class FORMVALIDATION
                         $error .= 'Invalid CSRF Token<br/> ';
                     }
                     break;
+                case 'cart_form';
+                    if(!CSRF::verifyToken( $data[$key],'cart_form' )){
+                        $error .= 'Invalid CSRF Token<br/> ';
+                    }
+                    break;
+                case 'delete_cart_form';
+                    if(!CSRF::verifyToken( $data[$key],'delete_cart_form' )){
+                        $error .= 'Invalid CSRF Token<br/> ';
+                    }
+                    break;
             }
         }//end - foreach
 

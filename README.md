@@ -32,3 +32,9 @@ delete function done
 
 product manage
 delete done
+
+19-jan-2023
+cart delete btn need to change
+carf CFRS token not complete
+my order CFRS token not complete
+payment not complete
