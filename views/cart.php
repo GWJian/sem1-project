@@ -13,11 +13,12 @@
     if ( $_SERVER["REQUEST_METHOD"] == 'POST' ) {
 
         // if $_POST['action] is remove, then proceed removeProductFromCart function
-        if ( isset( $_POST['action'] ) && $_POST['action'] == 'remove' ) {
+        if ( isset( $_POST['action'] ) && $_POST['action'] == 'remove') {
             // remove product from cart
             CART::removeProductFromCart( ( $_POST['product_id'] ) );
-            CSRF::removeToken('delete_cart_item');
+            CSRF::removeToken('delete_cart_form');
         } else {
+        }
             
             // make sure product_id is available in $_POST
             if ( isset( $_POST['product_id'] ) ) 
@@ -27,7 +28,6 @@
             }
         }
 
-    }
 ?>
 <?php
 require dirname(__DIR__) . '/parts/header.php';
@@ -59,11 +59,25 @@ require dirname(__DIR__) . '/parts/header.php';
                     <tr>
                         <td><?php echo $product['product_name']; ?></td>
                         <td><?php echo $product['price']; ?></td>
+
                         <td>
-                            <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-                                <p><?php echo $product['quantity']; ?></p>
+                            <!-- decrease -->
+                            <form action="<?=$_SERVER['REQUEST_URI']?>" method="POST">
+                                <button type="submit" class="btn"><i class="bi bi-dash-lg"></i></button>
+                                <input type="hidden" name="action" value="decrease">
+                                <input type="hidden" name="product_id_d" value="<?=$product['id']?>">
+                            </form>
+
+                            <p><?=$product['quantity']?></p>
+
+                            <!-- increase -->
+                            <form action="<?=$_SERVER['REQUEST_URI']?>" method="POST">
+                                <button type="submit" class="btn"><i class="bi bi-plus-lg"></i></button>
+                                <input type="hidden" name="action" value="increase">
+                                <input type="hidden" name="product_id_i" value="<?=$product['id']?>">
                             </form>
                         </td>
+
                         <td><?php echo $product['total']; ?></td>
                         <td>
 
@@ -72,7 +86,7 @@ require dirname(__DIR__) . '/parts/header.php';
                                 <input type="hidden" name="action" value="remove" />
                                 <!-- remove the selected product from cart -->
                                 <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-                                <input type="hidden" name="csrf_token" value="<?=CSRF::getToken('delete_cart_item')?>">
+                                <input type="hidden" name="csrf_token" value="<?=CSRF::getToken('delete_cart_form')?>">
                                 <button class="btn btn-danger btn-sm">
                                     <i class="bi bi-trash"></i>
                                 </button>
