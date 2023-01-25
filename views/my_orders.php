@@ -1,10 +1,15 @@
 <!-- require the header part -->
 <?php
-    // make sure only admin can access
-    if ( !Authentication::whoCanAccess('user') ) {
-        header('Location:/login');
+
+    $orders = new ORDERS();
+    // make sure user already logged in
+    if ( AUTHENTICATION::whoCanAccess('users') ) {
+        // if user not logged in, redirect to login page
+        header('Location: /login');
         exit;
     }
+    
+    $user_id = $_SESSION['user']['id'];
 ?>
 
 
@@ -31,19 +36,23 @@ require dirname(__DIR__) . '/parts/header.php';
                 </tr>
             </thead>
             <tbody>
-
+                <?php foreach( $orders->listOrders( $user_id ) as $order ) : ?>
                 <tr>
-                    <th scope="row">7</th>
+                    <th scope="row"><?php echo $order['id']; ?></th>
                     <td>
+                        <?php foreach($orders->listProductsinOrder( $order['id'] ) as $product ): ?>
                         <ul class="list-unstyled">
                             <li>
-                                Product 2 [3]
+                                <?php echo $product['product_name']; ?>
+                                [<?php echo $product['quantity']; ?>]
                             </li>
                         </ul>
+                        <?php endforeach; ?>
                     </td>
-                    <td>$90</td>
-                    <td>pending</td>
+                    <td>$<?php echo $order['total_amount']; ?></td>
+                    <td><?php echo $order['status']; ?></td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 

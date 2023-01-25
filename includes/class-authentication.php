@@ -62,7 +62,6 @@ class AUTHENTICATION
     /**
      * assign user's session
      */
-
      public static function setSession( $user_id )
      {
         //load the user datam from database based on $user_id provided

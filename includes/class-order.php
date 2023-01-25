@@ -117,7 +117,7 @@ class ORDERS
         return DB::connect()->select(
             'SELECT
             products.id,
-            products.name, 
+            products.product_name,
             orders_products.order_id,
             orders_products.quantity
             FROM orders_products
