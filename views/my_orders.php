@@ -5,14 +5,9 @@
         header('Location:/login');
         exit;
     }
-    // set CSRF token
-    CSRF::generateToken( 'my_order_form' );
-
-    //load post data
-    ?>
-
-
 ?>
+
+
 <?php
 require dirname(__DIR__) . '/parts/header.php';
 ?>
@@ -22,7 +17,7 @@ require dirname(__DIR__) . '/parts/header.php';
 <section class="bg-dark vh-100">
     <div class="min-vh-100 container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="h1">My Orders</h1>
+            <h1 class="h1 text-white">My Orders</h1>
         </div>
 
         <!-- List of orders placed by user in table format -->
@@ -36,6 +31,7 @@ require dirname(__DIR__) . '/parts/header.php';
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
                     <th scope="row">7</th>
                     <td>

@@ -90,6 +90,7 @@ class CART
     {
         // make sure the product_id is already in the cart session data
         if ( isset( $_SESSION['cart'][$product_id] ) ) {
+            // var_dump( $_SESSION['cart'][$product_id]);
             // unset it (means delete the selected product data)
             unset( $_SESSION['cart'][$product_id] );
         }

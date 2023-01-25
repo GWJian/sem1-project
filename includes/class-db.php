@@ -78,3 +78,8 @@ class DB
         }
     }
 }
+
+class CHECKOUT 
+{
+    
+}

@@ -11,6 +11,10 @@
     require "includes/class-form-validation.php";
     require "includes/class-csrf.php";
     require "includes/class-cart.php";
+    require "includes/class-order.php";
+    require "config.php";
+    require "includes/functions.php";
+
 
 //get route from the global variable
 $path = $_SERVER[ "REQUEST_URI" ];
@@ -44,6 +48,12 @@ switch( $path ) {
         break;
     case 'cart':
         require "views/cart.php";
+        break;
+    case 'checkout':
+        require "views/checkout.php";
+        break;
+    case 'payment-verification':
+        require "views/payment-verification.php";
         break;
                     
     // =========== Admin ==============
