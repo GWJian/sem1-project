@@ -78,10 +78,10 @@ require dirname(__DIR__) . '/parts/header.php';?>
                     <!-- delete start here -->
                     <td class="text-end">
                         <div class="buttons">
-                            <a href="/manage-users-edit?id=<?php echo $user['id']; ?>"
-                                class="btn btn-success btn-sm me-2">EDIT</a>
                             <!-- delete button -->
                             <?php if ( $_SESSION['user']['id'] !== $user['id'] ) : ?>
+                            <a href="/manage-users-edit?id=<?php echo $user['id']; ?>"
+                                class="btn btn-success btn-sm me-2">EDIT</a>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#user-<?php echo $user['id']; ?>">DELETE

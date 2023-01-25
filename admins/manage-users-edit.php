@@ -1,53 +1,65 @@
 <?php
 
-// make sure only admin can access
 if ( !Authentication::whoCanAccess('admin') ) {
-    header('Location:/dashboard');
+    header('Location:/manage-users');
     exit;
 }
 
-//load user data
-$user = User::getUserById( $_GET['id'] );
 
-// step 1: set CSRF token
-CSRF::generateToken('edit_user_form');
+    $user = User::getUserById( $_GET['id'] );
 
-// step 2: make sure post request
-if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
-    
-    // step 3: do error check
 
-    //if both password & confirm_password fields are empty, skip error checking for both fields.
-    $rule=[
+    CSRF::generateToken('edit_user_form'); 
+
+    if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
+    {
+
+    $is_password_changed = ( 
+         isset( $_POST['password'] ) && !empty( $_POST['password'] )  || 
+         isset( $_POST['confirm_password'] ) && !empty( $_POST['confirm_password'] ) 
+        ? true : false
+      );
+
+
+    $rules=[
         'name'=>'required',
         'email' => 'email_check',
         'role' => 'required',
         'csrf_token'=>'edit_user_form_csrf_token',
     ];
 
-    // if eiter password & confirm_password fields are not empty, 
-    // do error check for both fields
+
+    if ($is_password_changed)
+    {
+        $rules['password'] = 'password_check';
+        $rules['confirm_password'] = 'is_password_match';
+    }
+
 
     $error = FORMVALIDATION::validate(
-    $_POST,
-    $rule
+        $_POST,
+        $rules
     );
 
+    if ( $user ['email'] !== $_POST['email'])
+    {
+        $error .= FORMVALIDATION::checkEmailUniqueness($_POST['email']);
+    }
+
+    
     if ( !$error ){
-        // step 4: update user  
         User::update(
-            $user['id'], //id
-            $_POST['name'],//name
-            $_POST['email'],//email
-            $_POST['role'],//role
-            //password update if available
+            $user['id'],
+            $_POST['name'],
+            $_POST['email'],
+            $_POST['role'],
+            ( $is_password_changed ? $_POST['password'] : null )
         );
 
 
-        // step 5: remove the CSRF token
         CSRF::removeToken( 'edit_user_form' );
 
-        // step 6:redirect to manage users page
+
         header('Location: /manage-users');
         exit;
     }
@@ -88,7 +100,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' ){
                     </div>
                     <div class="col">
                         <label for="confirm-password" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirm-password" name="confirm-password" />
+                        <input type="password" class="form-control" id="confirm-password" name="confirm_password" />
                     </div>
                 </div>
             </div>

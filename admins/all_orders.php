@@ -22,6 +22,7 @@
         <table class="table table-hover table-bordered table-striped table-light">
             <thead>
                 <tr>
+                    <th scope="col">USER ID</th>
                     <th scope="col">Order ID</th>
                     <th scope="col">Products</th>
                     <th scope="col">Total Amount</th>
@@ -31,6 +32,7 @@
             <tbody>
                 <?php foreach( ORDERS::getAllOrders() as $order ) : ?>
                 <tr>
+                    <th scope="row"><?php echo User::getUserById($order['user_id'] )['name']; ?></th>
                     <th scope="row"><?php echo $order['id']; ?></th>
                     <td>
                         <?php foreach($orders->listProductsinOrder( $order['id'] ) as $product ): ?>

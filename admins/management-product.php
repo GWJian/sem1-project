@@ -1,7 +1,7 @@
 <?php  
 //only admin can access
 if ( !AUTHENTICATION::whoCanAccess('editor') ){
-    header('Location:/');
+    header('Location:/admin_page');
     exit;
 }
 

@@ -2,7 +2,7 @@
 
 // make sure only admin can access
 if ( !Authentication::whoCanAccess('editor') ) {
-    header('Location:/dashboard');
+    header('Location:/admin_page');
     exit;
 }
 

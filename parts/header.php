@@ -34,7 +34,9 @@ body {
                         <a href="/cart" class="nav-link px-2 text-white">Cart</a>
                     </li>
                     <li>
+                        <?php if (AUTHENTICATION::isLoggedIn()) : ?>
                         <a href="/my_orders" class="nav-link px-2 text-white">My Order</a>
+                        <?php endif; ?>
                     </li>
                     <?php if ( Authentication::whoCanAccess('editor') ) : ?>
                     <a href="/admin_page" class="btn btn-primary">Admin/Editor</a>

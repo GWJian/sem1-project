@@ -3,9 +3,8 @@
 
     $orders = new ORDERS();
     // make sure user already logged in
-    if ( AUTHENTICATION::whoCanAccess('users') ) {
-        // if user not logged in, redirect to login page
-        header('Location: /login');
+    if ( !AUTHENTICATION::whoCanAccess('user') ){
+        header('Location:/login');
         exit;
     }
     
