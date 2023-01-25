@@ -92,9 +92,20 @@ class ORDERS
     }
 
     /**
+     * get all orders
+     */
+    public static function getAllOrders()
+    {
+        return DB::connect()->select(
+            'SELECT * FROM orders ORDER BY id DESC',
+            [],
+            true
+        );
+    }
+
+    /**
      * List all the orders by the logged_in user
      */
-
      public function listOrders( $user_id )
      {
         //load the orders data based on the egiven user_id

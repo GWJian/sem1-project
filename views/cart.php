@@ -90,16 +90,45 @@ require dirname(__DIR__) . '/parts/header.php';
                         </td>
 
                         <td><?php echo $product['total']; ?></td>
+
+                        <!-- delete button start -->
                         <td>
-                            <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
-                                <input type="hidden" name="action" value="remove" />
-                                <!-- remove the selected product from cart -->
-                                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </form>
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#post-<?php echo $product['id']; ?>">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                            <!-- delete button end -->
+                            <!-- Modal start -->
+                            <div class="modal fade" id="post-<?php echo $product['id']; ?>" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body text-start">
+                                            Are you sure you want to delete (<?php echo $product['id']; ?>)
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <form method="POST" action="<?php echo $_SERVER["REQUEST_URI"]; ?>">
+                                                <input type="hidden" name="action" value="remove" />
+                                                <!-- remove the selected product from cart -->
+                                                <input type="hidden" name="product_id"
+                                                    value="<?php echo $product['id']; ?>" />
+                                                <button class="btn btn-danger btn-sm">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
+                        <!-- Modal end -->
                     </tr>
                     <?php endforeach; ?>
 

@@ -78,6 +78,9 @@ switch( $path ) {
     case 'manage-users-add':
         require 'admins/manage-users-add.php';
         break;
+    case 'all_orders':
+        require 'admins/all_orders.php';
+        break;
 
     // =========== Home ===============
     default:
