@@ -9,13 +9,12 @@
     }
     
     $user_id = $_SESSION['user']['id'];
+
+    require dirname(__DIR__) . '/parts/header.php';
+
+    // var_dump(GetApi());
 ?>
 
-
-<?php
-require dirname(__DIR__) . '/parts/header.php';
-?>
-<!-- require the header part -->
 
 <!-- admin add movie -->
 <section class="bg-dark vh-100">
@@ -60,6 +59,7 @@ require dirname(__DIR__) . '/parts/header.php';
         </div>
     </div>
 </section>
+
 
 <!-- require the footer part -->
 <?php

@@ -40,3 +40,18 @@ function callAPI( $api_url = '', $method = 'GET', $formdata = [], $headers = [] 
 
     return json_decode( $response );
 }
+
+
+
+function GetApi()
+{
+    callAPI(
+        BILLPLZ_API_URL . 'v3/bills/' . BILL_ID . '/transactions',
+        'GET',
+        [],
+        [
+            'Content-Type: application/json',
+            'Authorization: Basic ' . base64_encode( BILLPLZ_API_KEY . ':' )
+        ]
+    );
+}
