@@ -1,24 +1,5 @@
       <!--  footer -->
-      <!-- <section class="bg-dark">
-          <div class="container">
-              <footer class="py-3">
-                  <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                      <li class="nav-item">
-                          <a class="nav-link px-2 text-muted">About Us</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link px-2 text-muted">Term of Use</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link px-2 text-muted">Privacy Policy</a>
-                      </li>
-                  </ul>
-                  <p class="text-center text-muted">
-                      Copyright Reserved © Gold C . All Rights Reserved
-                  </p>
-              </footer>
-          </div>
-      </section> -->
+
       </main>
 
       <!-- --------------------------------------------------------------- -->

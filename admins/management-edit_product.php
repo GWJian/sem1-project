@@ -20,7 +20,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
     $rules=[
         'product_name'=>'required',
         'image_url'=>'required',
-        'releasedate'=>'required',
+        'releasedate'=>'include',
         'price'=>'required',
         'status' => 'required',
         'csrf_token'=>'update_product_form',
@@ -93,7 +93,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" id="releasedate">
                         <div>
                             <label for="releasedate">Release Date:</label>
                             <input type="date" id="releasedate" name="releasedate"
