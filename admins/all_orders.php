@@ -56,7 +56,8 @@
                         <form action="">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal-<?php echo $order['id']; ?>"
-                                <?php echo ( $order['status'] === 'failed' || 'pending' ? 'hidden' : '' ); ?>>Details
+                                <?php echo ( $order['status'] === 'failed' ? 'hidden' : '' ); ?>
+                                <?php echo ( $order['status'] === 'pending' ? 'hidden' : '' ); ?>>Details
                             </button>
                         </form>
 
