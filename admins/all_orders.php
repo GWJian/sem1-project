@@ -18,7 +18,7 @@
 <section class="bg-dark vh-100">
     <div class="min-vh-100 container">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="h1 text-white">My Orders</h1>
+            <h1 class="h1 text-white">All Orders</h1>
         </div>
 
         <!-- List of orders placed by user in table format -->
@@ -53,10 +53,13 @@
                     <td><?php echo $order['status']; ?></td>
                     <th scope="col">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal-<?php echo $order['id']; ?>">
-                            Details
-                        </button>
+                        <form action="">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-<?php echo $order['id']; ?>"
+                                <?php echo ( $order['status'] === 'failed' || 'pending' ? 'hidden' : '' ); ?>>Details
+                            </button>
+                        </form>
+
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal-<?php echo $order['id']; ?>" tabindex="-1"
@@ -80,6 +83,8 @@
                                         COMPLETE AT :<?php echo GetApi($order['transaction_id'])->completed_at; ?>
                                         <br>
                                         PAYMENT METHOD :<?php echo GetApi($order['transaction_id'])->payment_channel; ?>
+                                        <br>
+                                        Total Amount :<?php echo $order['total_amount']; ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

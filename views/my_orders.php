@@ -52,10 +52,12 @@
                     <td><?php echo $order['status']; ?></td>
                     <th scope="col">
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal-<?php echo $order['id']; ?>">
-                            Details
-                        </button>
+                        <form action="">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal-<?php echo $order['id']; ?>"
+                                <?php echo ( $order['status'] === 'failed' || 'pending' ? 'hidden' : '' ); ?>>Details
+                            </button>
+                        </form>
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal-<?php echo $order['id']; ?>" tabindex="-1"
@@ -77,6 +79,8 @@
                                         COMPLETE AT :<?php echo GetApi($order['transaction_id'])->completed_at; ?>
                                         <br>
                                         PAYMENT METHOD :<?php echo GetApi($order['transaction_id'])->payment_channel; ?>
+                                        <br>
+                                        Total Amount :<?php echo $order['total_amount']; ?>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

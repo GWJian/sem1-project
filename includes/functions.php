@@ -45,6 +45,7 @@ function callAPI( $api_url = '', $method = 'GET', $formdata = [], $headers = [] 
 
 //用callAPI 的function 执行getAPI
 //GetApi($transaction_id) 的 $transaction_id 来拿 SQL database 里面的 order transaction_id 来return data.
+
 function GetApi($transaction_id)
 {
    $getAPI = callAPI(
