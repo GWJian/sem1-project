@@ -109,7 +109,7 @@ require dirname(__DIR__) . '/parts/header.php';
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body text-start">
-                                            Are you sure you want to delete (<?php echo $product['id']; ?>)
+                                            Are you sure you want to delete (<?php echo $product['product_name']; ?>)
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
