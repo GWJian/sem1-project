@@ -56,16 +56,15 @@ class PRODUCT
     /**
      * Add new product
     */
-    public static function add ($user_id,$product_name,$image_url,$releasedate,$price,$description)
+    public static function add ($user_id,$product_name,$image_url,$price,$description)
     {   
       return DB::connect()->insert(
-          'INSERT INTO products (user_id,product_name,image_url,releasedate,price,description)
-          VALUES (:user_id,:product_name,:image_url,:releasedate,:price,:description)',
+          'INSERT INTO products (user_id,product_name,image_url,price,description)
+          VALUES (:user_id,:product_name,:image_url,:price,:description)',
           [
             'user_id'=>$user_id,//get data that who doing the new product
             'product_name'=>$product_name,
             'image_url'=>$image_url,
-            'releasedate'=>$releasedate,
             'price'=>$price,
             'description'=>$description,
           ]

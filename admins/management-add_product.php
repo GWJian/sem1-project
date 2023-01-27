@@ -15,7 +15,7 @@
         $rules=[
             'product_name'=>'required',
             'image_url'=>'required',
-            'releasedate'=>'required',
+            // 'releasedate'=>'required',
             'price'=>'required',
             'csrf_token'=>'product_add_form_csrf_token',
         ];
@@ -31,7 +31,7 @@
                 $_SESSION['user']['id'],//defined who is the user id
                 $_POST['product_name'],
                 $_POST['image_url'],
-                $_POST['releasedate'],
+                // $_POST['releasedate'],
                 $_POST['price'],
                 $_POST['description'],
             );
