@@ -43,10 +43,12 @@ function callAPI( $api_url = '', $method = 'GET', $formdata = [], $headers = [] 
 
 
 
-function GetApi()
+//用callAPI 的function 执行getAPI
+//GetApi($transaction_id) 的 $transaction_id 来拿 SQL database 里面的 order transaction_id 来return data.
+function GetApi($transaction_id)
 {
-    callAPI(
-        BILLPLZ_API_URL . 'v3/bills/' . BILL_ID . '/transactions',
+   $getAPI = callAPI(
+        BILLPLZ_API_URL . 'v3/bills/' . $transaction_id . '/transactions',
         'GET',
         [],
         [
@@ -54,4 +56,6 @@ function GetApi()
             'Authorization: Basic ' . base64_encode( BILLPLZ_API_KEY . ':' )
         ]
     );
+    
+    return $getAPI->transactions[0];
 }
