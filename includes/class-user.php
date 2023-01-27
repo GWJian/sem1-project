@@ -50,7 +50,7 @@ class User
       */
       public static function update ( $id,$name,$email,$role,$password=null)
       {
-        //setup params
+
         $params=
         [
             'id'=>$id,

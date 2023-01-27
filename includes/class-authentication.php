@@ -15,7 +15,7 @@ class AUTHENTICATION
                 'email' => $email
             ]      
         );
-        // if $user is valid, then return $user array
+
         if ( $user ) {
             // proceed to verify password
             if ( password_verify( $password, $user['password'] ) ) {
@@ -64,14 +64,13 @@ class AUTHENTICATION
      */
      public static function setSession( $user_id )
      {
-        //load the user datam from database based on $user_id provided
         $user = DB::connect()->select(
             'SELECT * FROM users WHERE id = :id',
             [
                 'id'=>$user_id
             ]
         );
-        //assign it to $_SESSION['user]
+        
         $_SESSION['user'] = [
             'id' => $user['id'],
             'name' => $user['name'],
@@ -113,11 +112,8 @@ class AUTHENTICATION
       {
         return self::getRole() == 'user';
       }
-    /**
-     * to control user's access
-     * 
-     * $role can be 'admin', 'editor' or 'user;'
-     */
+
+      
     public static function whoCanAccess($role)
     {
         //make sure user is logged in
@@ -132,8 +128,7 @@ class AUTHENTICATION
                     return self::isUser() || self::isEditor() || self::isAdmin() ;
             }//end - switch
         }
-        //if no condition met,we'll return false
+       
         return false;
-
     }
 }

@@ -33,8 +33,7 @@ class DB
         $statement = $this->db->prepare( $sql );
         //execute
         $statement->execute($data);
-        //if $is_list = false then return only single record
-        //if $is_list = true then return all the record 
+
         //fetch
         if ( $is_list ){
             return $statement->fetchAll(PDO::FETCH_ASSOC);

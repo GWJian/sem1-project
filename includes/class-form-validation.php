@@ -41,13 +41,13 @@ class FORMVALIDATION
             {
                 //make sure the value is not empty
                 case 'required';
-                // round 1 - $data[$key] = $_POST['email']
+                
                     if ( empty( $data[$key] ) )
                     {
                         $error .= 'This field (' . $key . ') is empty <br/>';
                     }
                     break;
-                // make sure password is not empty and also more than 8 characters
+                // make sure password is not empty and also more than 4 characters
                 case 'password_check';
                     // step 1: make sure password field is not empty
                     if ( empty( $data[$key] ) )

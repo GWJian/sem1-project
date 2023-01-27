@@ -1,6 +1,6 @@
 <?php
 
-//static class
+
 class PRODUCT
 {
     //Retrieve all product from database
