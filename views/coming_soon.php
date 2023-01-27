@@ -3,7 +3,7 @@
 <!-- require the header part -->
 
 
-<!-- products -->
+<!-- Coming soon -->
 <section class="bg-dark">
     <div class="container">
         <h1 style="text-align: center; color: #fbca04">Coming Soon</h1>

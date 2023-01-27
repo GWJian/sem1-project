@@ -40,14 +40,14 @@ class PRODUCT
     }
 
         /**
-     * Retrieve all the Pending products
+     * Retrieve all the ComingSoon products
      */
-    public static function getPendingProducts()
+    public static function getComingSoonProducts()
     {
         return DB::connect()->select(
             'SELECT * FROM products WHERE status=:status ORDER BY id DESC',
             [
-                'status'=>'pending'
+                'status'=>'comingsoon'
             ],
             true
         );

@@ -27,9 +27,9 @@ body {
                     <li>
                         <a href="/" class="nav-link px-2 text-white">Home</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="/coming_soon" class="nav-link px-2 text-white">Coming Soon</a>
-                    </li>
+                    </li> -->
                     <?php if (AUTHENTICATION::isLoggedIn()) : ?>
                     <li>
                         <a href="/cart" class="nav-link px-2 text-white">Cart</a>

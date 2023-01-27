@@ -78,14 +78,14 @@
                         <input type="text" class="form-control" name="image_url" />
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-6">
                             <div class="py-3">
-                                <label for="releasedate">Date:</label>
+                                <label for="releasedate">Release Date:</label>
                                 <input type="date" id="releasedate" name="releasedate">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="row ">

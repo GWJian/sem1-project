@@ -95,7 +95,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                 <div class="row">
                     <div class="col-sm-6">
                         <div>
-                            <label for="releasedate">Date:</label>
+                            <label for="releasedate">Release Date:</label>
                             <input type="date" id="releasedate" name="releasedate"
                                 value="<?php echo $product['releasedate']; ?>">
                         </div>
@@ -119,6 +119,10 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                             Pending</option>
                         <option value="publish" <?php echo ( $product['status'] == 'publish' ? 'selected' : '' ); ?>>
                             Publish
+                        </option>
+                        <option value="comingsoon"
+                            <?php echo ( $product['status'] == 'comingsoon' ? 'selected' : '' ); ?>>
+                            Coming Soon
                         </option>
                     </select>
                 </div>
