@@ -114,7 +114,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
 
                 <div class="mb-3">
                     <label for="post-content" class="form-label">Status</label>
-                    <select class="form-control" id="post-status-0" name="status">
+                    <select class="form-control" id="post-status" name="status">
                         <option value="pending" <?php echo ( $product['status'] == 'pending' ? 'selected' : '' ); ?>>
                             Pending</option>
                         <option value="publish" <?php echo ( $product['status'] == 'publish' ? 'selected' : '' ); ?>>
