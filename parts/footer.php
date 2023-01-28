@@ -12,5 +12,7 @@
       </script>
 
       </body>
+      <script src="../assets/js/status.js"></script>
+
 
       </html>

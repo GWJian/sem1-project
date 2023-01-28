@@ -92,8 +92,8 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-sm-6" id="releasedate">
+                <div class="row" id="releasedate">
+                    <div class="col-sm-6">
                         <div>
                             <label for="releasedate">Release Date:</label>
                             <input type="date" id="releasedate" name="releasedate"
@@ -145,6 +145,8 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
         </div>
     </div>
 </section>
+
+
 
 <!-- require the footer part -->
 <?php require 'parts/footer.php' ?>

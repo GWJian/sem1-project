@@ -17,8 +17,6 @@ body {
 </style>
 
 <body>
-
-
     <!-- nav menu-->
     <header class="p-3 bg-black">
         <div class="container">
