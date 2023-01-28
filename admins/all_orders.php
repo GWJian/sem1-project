@@ -56,8 +56,8 @@
                         <form action="">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal-<?php echo $order['id']; ?>"
-                                <?php echo ( $order['status'] === 'failed' ? 'hidden' : '' ); ?>
-                                <?php echo ( $order['status'] === 'pending' ? 'hidden' : '' ); ?>>Details
+                                <?php echo ( $order['status'] === 'failed' || $order['status'] === 'pending'? 'hidden' : '' ); ?>>Details
+
                             </button>
                         </form>
 
@@ -68,7 +68,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Receipt</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
