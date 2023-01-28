@@ -96,7 +96,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                     <div class="col-sm-6">
                         <div>
                             <label for="releasedate">Release Date:</label>
-                            <input type="date" id="releasedate" name="releasedate"
+                            <input type="date" id="releasedate-0" name="releasedate"
                                 value="<?php echo $product['releasedate']; ?>">
                         </div>
                     </div>
