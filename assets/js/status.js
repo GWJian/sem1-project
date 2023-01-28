@@ -9,7 +9,7 @@ document
   });
 
 function hideDiv() {
-  document.getElementById("releasedate-0").style.display = "none";
+  document.getElementById("releasedate").style.display = "none";
 }
 
 window.onload = hideDiv;

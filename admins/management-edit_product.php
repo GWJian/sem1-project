@@ -92,7 +92,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                     </div>
                 </div>
 
-                <div class="row" id="releasedate-0">
+                <div class="row" id="releasedate">
                     <div class="col-sm-6">
                         <div>
                             <label for="releasedate">Release Date:</label>
