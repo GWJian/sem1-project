@@ -60,3 +60,21 @@ document.getElementById("post-status").addEventListener("change", function () {
     document.getElementById("releasedate-0").value = "";
   }
 });
+
+// ======================================
+// if comingsoon and publish are empty,alert Please enter a release date
+
+document
+  .getElementById("update-button")
+  .addEventListener("click", function (event) {
+    var postStatus = document.getElementById("post-status").value;
+    var releaseDate = document.getElementById("releasedate-0").value;
+
+    if (
+      (postStatus === "comingsoon" || postStatus === "publish") &&
+      releaseDate === ""
+    ) {
+      alert("Please enter a release date");
+      event.preventDefault();
+    }
+  });

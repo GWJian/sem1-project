@@ -137,7 +137,7 @@ if ( $_SERVER ["REQUEST_METHOD"] === 'POST' )
                 <input type="hidden" id="id" value="1" />
 
                 <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="submit" class="btn btn-primary" id="update-button">Update</button>
                     <a href="/management" class="btn-danger btn btn-outline-light">Back</a>
                 </div>
                 <input type="hidden" name="csrf_token" value="<?php echo CSRF::getToken('update_product_form') ?>">
