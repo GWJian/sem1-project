@@ -46,7 +46,7 @@ if ( $_SERVER["REQUEST_METHOD"] === 'POST' )
 
 
 <!-- admin Product management -->
-<section class="bg-dark vh-100">
+<section class="bg-dark vh-auto">
     <div class="container">
         <h2 style="color: #fbca04">Product Management</h2>
         <div class="float-end">
