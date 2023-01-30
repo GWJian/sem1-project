@@ -15,7 +15,7 @@
 ?>
 
 <!-- admin add movie -->
-<section class="bg-dark vh-100">
+<section class="bg-dark vh-auto">
     <div class="min-vh-100 container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h1 class="h1 text-white">All Orders</h1>
